@@ -1,0 +1,2 @@
+# BGMamaProject
+FMI Course Project
