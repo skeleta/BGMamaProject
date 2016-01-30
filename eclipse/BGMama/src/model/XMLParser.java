@@ -115,7 +115,7 @@ public class XMLParser {
 		ArrayList<HashMap<String, String>> array = new ArrayList<>();
 		for (int temp = 0; temp < nodeList.getLength(); temp++) {
 			Node node = (Node) nodeList.item(temp);
-			HashMap nodeHashMap = hashMapForNode(node);
+			HashMap<String, String> nodeHashMap = hashMapForNode(node);
 			if (nodeHashMap.size() > 0) {
 				array.add(nodeHashMap);
 			}			
