@@ -1,14 +1,12 @@
 package main;
 
-import model.XMLParser;
-import model.XMLParser.DataType;
+import model.DataManager;
 
 public class MainClass {
 
 	public static void main(String[] args) {
-		String filePath = new String("src/Supporting Files/TrainingData.txt");
-		XMLParser.parseFile(filePath, DataType.DataTypeTraining);
-		XMLParser.printData(XMLParser.getTrainingData());
+		DataManager.loadTrainingData();
+		DataManager.printTrainingData();
 	}
 
 }
