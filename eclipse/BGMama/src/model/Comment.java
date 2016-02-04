@@ -3,13 +3,22 @@ package model;
 public class Comment {
 	
 	private String commentId;
-	private String commentCategory;
+	private String commentCategoryText;
 	private String commentText;
 	
-	public Comment(String commentId, String commentCategory, String commentText) {
+	public enum ClassType {
+		ClassTypePositive,
+		ClassTypeNegative,
+		ClassTypeUnknown
+	}
+	
+	private static final String positiveClass = "positive";
+	private static final String negativeClass = "negative";
+	
+	public Comment(String commentId, String commentCategoryText, String commentText) {
 		setCommentId(commentId);
 		setCommentText(commentText);
-		setCommentCategory(commentCategory);
+		setCommentCategoryText(commentCategoryText);
 	}
 	
 	public String getCommentId() {
@@ -18,11 +27,24 @@ public class Comment {
 	public void setCommentId(String commentId) {
 		this.commentId = commentId;
 	}
-	public String getCommentCategory() {
-		return commentCategory;
+	public String getCommentCategoryText() {
+		return commentCategoryText;
 	}
-	public void setCommentCategory(String commentCategory) {
-		this.commentCategory = commentCategory;
+	
+	public ClassType getCommentCategory() {
+		if (this.getCommentCategoryText().equals(positiveClass)) {
+			return ClassType.ClassTypePositive;
+		}
+		
+		if (this.getCommentCategoryText().equals(negativeClass)) {
+			return ClassType.ClassTypeNegative;
+		}
+		
+		return ClassType.ClassTypeUnknown;
+	}
+	
+	public void setCommentCategoryText(String commentCategory) {
+		this.commentCategoryText = commentCategory;
 	}
 	public String getCommentText() {
 		return commentText;
@@ -30,10 +52,18 @@ public class Comment {
 	public void setCommentText(String commentText) {
 		this.commentText = commentText;
 	}
+	
+	public boolean isPositive(){
+		return getCommentCategory() == ClassType.ClassTypePositive;
+	}
+	
+	public boolean isNegative(){
+		return getCommentCategory() == ClassType.ClassTypeNegative;
+	}
 
 	@Override
 	public String toString() {
-		return "\n[commentId=" + commentId + "\n commentCategory=" + commentCategory + "\n commentText="
+		return "\n[commentId=" + commentId + "\n commentCategory=" + commentCategoryText + "\n commentText="
 				+ commentText + "]";
 	}
 

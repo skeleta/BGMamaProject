@@ -79,7 +79,7 @@ public class LocationsTableView extends JFrame {
 		DefaultTableModel dtm = new DefaultTableModel(0, 0);
 
 		// add header of the table
-		String header[] = new String[] { "Локация", "Линк"};
+		String header[] = new String[] { "Р›РѕРєР°С†РёСЏ", "Р›РёРЅРє"};
 
 		// add header in table model     
 		 dtm.setColumnIdentifiers(header);

@@ -6,9 +6,9 @@ import model.XMLParser.DataType;
 
 public class DataManager {
 	
-	private static final String trainingDataFilePath = new String("src/Supporting Files/TrainingData.txt");
-	private static final String testDataFilePath = new String("src/Supporting Files/TestData.txt");
-	private static final String unknownDataFilePath = new String("src/Supporting Files/UnknownData.txt");
+	private static final String trainingDataFilePath = new String("src/Supporting Files/TrainingData.xml");
+	private static final String testDataFilePath = new String("src/Supporting Files/TestData.xml");
+	private static final String unknownDataFilePath = new String("src/Supporting Files/UnknownData.xml");
 	
 	private static ArrayList<Comment> trainingData = new ArrayList<>();
 	private static ArrayList<Comment> testData = new ArrayList<>();
