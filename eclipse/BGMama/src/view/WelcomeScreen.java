@@ -77,7 +77,7 @@ public class WelcomeScreen extends JFrame {
 			@Override
 			public void mousePressed(MouseEvent arg0) {
 				//TODO: should be changed with loading unknown data and parsing it
-				DataManager.loadTrainingData();
+				DataManager.loadUnknownData();
 				openLocationsTableView();
 			}
 		});
