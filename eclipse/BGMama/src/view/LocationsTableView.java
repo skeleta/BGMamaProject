@@ -89,7 +89,7 @@ public class LocationsTableView extends JFrame {
 	
 	private void addRowsData(DefaultTableModel dataModel){
 		//TODO: should be changed with showing unknown data and links to it
-		ArrayList<Comment> allComments = DataManager.getTrainingData();
+		ArrayList<Comment> allComments = DataManager.getUnknownData();
 		for (Comment comment : allComments) {
 			dataModel.addRow(new Object[] { comment.getCommentText(), comment.getCommentCategory()});
 		}
