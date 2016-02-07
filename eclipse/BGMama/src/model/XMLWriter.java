@@ -24,7 +24,7 @@ public class XMLWriter {
 	private static DOMSource source;
 	private static StreamResult result;
 
-	public static void createFile() {
+	public static void createFile(String name) {
 		DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = null;
 
@@ -40,7 +40,7 @@ public class XMLWriter {
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			transformer = transformerFactory.newTransformer();
 			source = new DOMSource(openDocument);
-			result = new StreamResult(new File("src/Supporting Files/unknown_data.xml"));
+			result = new StreamResult(new File("src/Supporting Files/" + name +".xml"));
 
 		} catch (DOMException e) {
 			// TODO Auto-generated catch block
