@@ -2,6 +2,7 @@ package model;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
@@ -9,6 +10,7 @@ import java.io.UnsupportedEncodingException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 
 
 public class JSONReader {	
@@ -21,6 +23,7 @@ public class JSONReader {
 	        // Read file in stream mode
 	        reader.beginArray();
 	        System.out.println("Searching...");
+	        XMLWriter.createFile();
 	        while (reader.hasNext()) {
 	            // Read data into object model
 	        	MessageObject msg =  gson.fromJson(reader, MessageObject.class);       	
@@ -28,10 +31,11 @@ public class JSONReader {
 	        	String topic = msg.msgcontent.msg.idtopic;
 	        	String topicName = msg.msgcontent.msg.msgsubject;
 	            if (topicName.toLowerCase().contains("хотел")) {
-	                System.out.println("Stream mode: " + msg);
+	                XMLWriter.writeObjectInfoFile(msg);
 	            }            
 	        }
-	        System.out.println("Reder was closed.");
+	        System.out.println("Reader was closed.");
+	        XMLWriter.closeFile();
 	        reader.close();
 	    } catch (UnsupportedEncodingException ex) {
 //	        ...
