@@ -50,5 +50,6 @@
 	<classpathentry kind="lib" path="D:/FMI_Projects/BGMamaProject/gate/gate-8.1-build5169-ALL/lib/xmlunit-1.5.jar"/>
 	<classpathentry kind="lib" path="D:/FMI_Projects/BGMamaProject/gate/gate-8.1-build5169-ALL/lib/xpp3-1.1.4c.jar"/>
 	<classpathentry kind="lib" path="D:/FMI_Projects/BGMamaProject/gate/gate-8.1-build5169-ALL/lib/xstream-1.4.7.jar"/>
+	<classpathentry kind="lib" path="D:/FMI_Projects/BGMamaProject/external/gson-2.2.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
