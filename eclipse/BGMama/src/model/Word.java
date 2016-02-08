@@ -11,9 +11,14 @@ public class Word {
 	private int negativeOccurence = 0;
 	private int positiveOccurence = 0;
 	
+	public Word(String term) {
+		super();
+		setTerm(term);
+	}	
+	
 	public Word(String term, ClassType type) {
 		super();
-		this.term = term;
+		setTerm(term);
 		increaseOccurence(type);
 	}	
 	
@@ -41,6 +46,10 @@ public class Word {
 		if (type == ClassType.ClassTypeNegative) {
 			this.negativeOccurence++;
 		}
+	}
+	
+	private void setTerm(String term) {
+		this.term = term.toLowerCase();
 	}
 
 	public String getTerm() {
