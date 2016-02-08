@@ -11,6 +11,8 @@ public class Comment {
 	private String commentCategoryText;
 	private String commentText;
 	
+	private int wordCount;
+	
 	private ArrayList<Word> uniqueWords = new ArrayList<>();
 	
 	public enum ClassType {
@@ -32,6 +34,10 @@ public class Comment {
 	
 	public String getCommentId() {
 		return commentId;
+	}
+	
+	public int getWordCount(){
+		return wordCount;
 	}
 	public void setCommentId(String commentId) {
 		this.commentId = commentId;
@@ -82,16 +88,25 @@ public class Comment {
 	
 	// private methods
 	private void formUniqueWordsArray() {
-		ArrayList<String> textArray = formArrayFromComment();		
+		ArrayList<String> textArray = formArrayFromComment();
+		ArrayList<String> addedStrings = new ArrayList<>();
+		uniqueWords = new ArrayList<>();
 		for (String string : textArray) {
-			Word word = new Word(string, this.getCommentCategory());
-			this.uniqueWords.add(word);
+			if(addedStrings.contains(string)){
+				Word word = uniqueWords.get(addedStrings.indexOf(string));
+				word.increaseOccurence(this.getCommentCategory());
+			} else {
+				Word word = new Word(string, this.getCommentCategory());
+				this.uniqueWords.add(word);
+				addedStrings.add(string);
+			}
+			
 		}
 	}
 	
 	private ArrayList<String> formArrayFromComment(){
 		// match only bg words with more than 2 letters
-		Pattern pattern = Pattern.compile("[–ê-–Ø–∞-—è]{2,}");
+		Pattern pattern = Pattern.compile("[¿-ﬂ‡-ˇ]{2,}");
 		Matcher matcher = pattern.matcher(this.commentText);
 		
 		ArrayList<String> textArray = new ArrayList<>(); 
@@ -100,8 +115,9 @@ public class Comment {
 			textArray.add(match);
 //			System.out.println("Word: " + match);
 		}
-		HashSet<String> uniqueValues = new HashSet<>(textArray);
-		textArray = new ArrayList<>(uniqueValues);
+		wordCount = textArray.size();
+//		HashSet<String> uniqueValues = new HashSet<>(textArray);
+//		textArray = new ArrayList<>(uniqueValues);
 		
 		return textArray;
 	}

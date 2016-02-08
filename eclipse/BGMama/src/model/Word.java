@@ -61,6 +61,13 @@ public class Word {
 	public double getNegativeProbablity() {
 		return negativeProbablity;
 	}
+
+	@Override
+	public String toString() {
+		return "Word [term=" + term + ", positiveProbability=" + positiveProbability + ", negativeProbablity="
+				+ negativeProbablity + ", negativeOccurence=" + negativeOccurence + ", positiveOccurence="
+				+ positiveOccurence + "]";
+	}
 	
 	
 

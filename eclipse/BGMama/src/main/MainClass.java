@@ -1,5 +1,6 @@
 package main;
 
+import model.BayesAlgorithm;
 import model.DataManager;
 import model.JSONReader;
 
@@ -9,8 +10,10 @@ public class MainClass {
 
 		DataManager.loadTrainingData();
 
-		DataManager.printTrainingData();
-//		JSONReader.readStream();
+//		DataManager.printTrainingData();
+		BayesAlgorithm.startTraining();
+		//		JSONReader.readStream();
+
 	}
 
 }
