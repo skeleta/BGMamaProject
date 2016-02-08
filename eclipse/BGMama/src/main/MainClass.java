@@ -1,8 +1,9 @@
 package main;
 
 import model.BayesAlgorithm;
+import model.Comment;
+import model.Comment.ClassType;
 import model.DataManager;
-import model.JSONReader;
 
 public class MainClass {
 
@@ -10,8 +11,14 @@ public class MainClass {
 
 		DataManager.loadTrainingData();
 
+		DataManager.loadTestData();
 //		DataManager.printTrainingData();
 		BayesAlgorithm.startTraining();
+		for (Comment comment : DataManager.getTestData()) {
+			comment.setClassifiedType(BayesAlgorithm.classifyComment(comment));
+//			break;
+		}
+		DataManager.prindAllTrueGuessedClassesInTestData(ClassType.ClassTypeNegative);
 		//		JSONReader.readStream();
 
 	}

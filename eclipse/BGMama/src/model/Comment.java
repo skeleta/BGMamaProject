@@ -10,6 +10,7 @@ public class Comment {
 	private String commentId;
 	private String commentCategoryText;
 	private String commentText;
+	private ClassType classifiedType;
 	
 	private int wordCount;
 	
@@ -46,6 +47,14 @@ public class Comment {
 		return commentCategoryText;
 	}
 	
+	public ClassType getClassifiedType() {
+		return classifiedType;
+	}
+
+	public void setClassifiedType(ClassType classifiedType) {
+		this.classifiedType = classifiedType;
+	}
+
 	public ClassType getCommentCategory() {
 		if (this.getCommentCategoryText().equals(positiveClass)) {
 			return ClassType.ClassTypePositive;
@@ -79,13 +88,13 @@ public class Comment {
 	public boolean isNegative(){
 		return getCommentCategory() == ClassType.ClassTypeNegative;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "\n[commentId=" + commentId + "\n commentCategory=" + commentCategoryText + "\n commentText="
-				+ commentText + "]";
+		return "Comment [commentCategoryText=" + commentCategoryText + ", commentText=" + commentText
+				+ ", classifiedType=" + classifiedType + "]";
 	}
-	
+
 	// private methods
 	private void formUniqueWordsArray() {
 		ArrayList<String> textArray = formArrayFromComment();

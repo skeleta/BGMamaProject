@@ -2,11 +2,12 @@ package model;
 
 import java.util.ArrayList;
 
+import model.Comment.ClassType;
 import model.XMLParser.DataType;
 
 public class DataManager {
 	
-	private static final String trainingDataFilePath = new String("src/Supporting Files/test_file.xml");
+	private static final String trainingDataFilePath = new String("src/Supporting Files/TrainingData.xml");
 	private static final String testDataFilePath = new String("src/Supporting Files/TestData.xml");
 	private static final String unknownDataFilePath = new String("src/Supporting Files/UnknownData.xml");
 	
@@ -61,6 +62,14 @@ public class DataManager {
 	public static void loadUnknownData() {
 		setUnknownData(new ArrayList<>());
 		XMLParser.parseFile(unknownDataFilePath, DataType.DataTypeUnknown);
+	}
+	
+	public static void prindAllTrueGuessedClassesInTestData(ClassType type){
+		for (Comment comment : testData) {
+			if(comment.getCommentCategory() == type && comment.getCommentCategory() == comment.getClassifiedType()){
+				System.out.println("\n" + comment.toString());
+			}
+		}
 	}
 	
 	public static void printTrainingData() {

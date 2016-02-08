@@ -1,5 +1,6 @@
 package model;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import model.Comment.ClassType;
@@ -90,6 +91,48 @@ public class BayesAlgorithm {
 		return positiveProbability;
 	}
 	
-	
 	// classifying
+	public static ClassType classifyComment(Comment comment) {
+		ArrayList<Word> allMatchingWords = findAllMatchingWords(comment);
+		double wordsPositiveProbability = 0.0; //(P(word|positiveClass)
+		double wordsNegativeProbability = 0.0; //(P(word|negativeClass)
+		for (Word word : allMatchingWords) {
+			wordsPositiveProbability += Math.log(word.getPositiveProbability());
+			wordsNegativeProbability += Math.log(word.getNegativeProbablity());
+		}
+		
+		wordsPositiveProbability += Math.log(positiveProbability);
+		wordsNegativeProbability += Math.log(negativeProbability);
+		
+		return mostProbableClass(wordsPositiveProbability, wordsNegativeProbability);		
+	}
+	
+	private static ArrayList<Word> findAllMatchingWords(Comment comment){
+		ArrayList<Word> allMatchingWords = new ArrayList<>();
+		for (Word word : comment.getUniqueWords()) {
+			for (Word dictionaryWord : termsDictionary) {
+				if(word.equals(dictionaryWord)) {
+					allMatchingWords.add(dictionaryWord);
+				}
+			}
+		}
+		return allMatchingWords;
+	}
+	
+	private static ClassType mostProbableClass(double positiveProb, double negativeProb) {
+		ClassType type = ClassType.ClassTypeUnknown;
+		if (positiveProb > negativeProb) {
+			type = ClassType.ClassTypePositive;
+		} else if (positiveProb < negativeProb) {
+			type = ClassType.ClassTypeNegative;
+		} else {
+			if (positiveProbability > negativeProbability) {
+				type = ClassType.ClassTypePositive;
+			} else if (positiveProbability < negativeProbability) {
+				type = ClassType.ClassTypeNegative;
+			}
+		}
+		return type;
+	}
+	
 }

@@ -68,7 +68,22 @@ public class Word {
 				+ negativeProbablity + ", negativeOccurence=" + negativeOccurence + ", positiveOccurence="
 				+ positiveOccurence + "]";
 	}
-	
-	
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Word other = (Word) obj;		
+		if (term == null) {
+			if (other.term != null)
+				return false;
+		} else if (!term.equals(other.term))
+			return false;
+		return true;
+	}
 
 }
