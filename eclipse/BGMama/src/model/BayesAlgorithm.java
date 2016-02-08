@@ -28,8 +28,22 @@ public class BayesAlgorithm {
 	}
 	
 	private static void formTermsDictionary(ArrayList<Comment> trainingData) {
-		//TODO: save all diff words and symbols in the trainingData into termsDictionary with object Word
+		//save all diff words and symbols in the trainingData into termsDictionary with object Word
 		termsDictionary = new ArrayList<>();
+		ArrayList<String> addedStrings = new ArrayList<>();
+		for (Comment comment : trainingData) {
+			for (Word word : comment.getUniqueWords()) {
+				String term = word.getTerm();
+				if (addedStrings.contains(term)) {
+					// increase occurence of existing word
+					Word addedWord = termsDictionary.get(addedStrings.indexOf(term));
+					addedWord.increaseOccurence(comment.getCommentCategory());
+				} else {
+					// add new word to the dictionary
+					termsDictionary.add(word);
+				}
+			}
+		}
 	}
 	
 	private static void concatenateComments(ArrayList<Comment> comments) {
