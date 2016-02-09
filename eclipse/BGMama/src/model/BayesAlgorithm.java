@@ -133,6 +133,5 @@ public class BayesAlgorithm {
 			}
 		}
 		return type;
-	}
-	
+	}	
 }

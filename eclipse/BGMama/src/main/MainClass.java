@@ -4,6 +4,7 @@ import model.BayesAlgorithm;
 import model.Comment;
 import model.Comment.ClassType;
 import model.DataManager;
+import model.StatisticsManager;
 
 public class MainClass {
 
@@ -12,13 +13,15 @@ public class MainClass {
 		DataManager.loadTrainingData();
 
 		DataManager.loadTestData();
-//		DataManager.printTrainingData();
+		//		DataManager.printTrainingData();
 		BayesAlgorithm.startTraining();
 		for (Comment comment : DataManager.getTestData()) {
 			comment.setClassifiedType(BayesAlgorithm.classifyComment(comment));
-//			break;
+			//			break;
 		}
-		DataManager.prindAllTrueGuessedClassesInTestData(ClassType.ClassTypeNegative);
+		StatisticsManager statisticsManager = new StatisticsManager(DataManager.getTestData());
+		statisticsManager.printStatistics();
+
 		//		JSONReader.readStream();
 
 	}
