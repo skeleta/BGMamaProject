@@ -8,6 +8,9 @@ public class StatisticsManager {
 
 	private int negativeCommentsCount = 0;
 	private int positiveCommentsCount = 0;
+	
+	private int negativeClassifiedCommentsCount = 0;
+	private int positiveClassifiedCommentsCount = 0;
 
 	private int truePositiveClassPositive = 0;
 	private int falsePositiveClassPositive = 0;
@@ -23,8 +26,12 @@ public class StatisticsManager {
 		super();
 		this.data = data;
 		calculateRealDataClassCommentsCount();
+		calculateClassifiedClassData();
+		//first calculate positive comments
 		calculateTruePositiveComments();
+		//after that calculate false positive
 		calculateFalsePositiveComments();
+		// and false negative
 		calculateFalseNegativeComments();
 	}
 	
@@ -113,6 +120,16 @@ public class StatisticsManager {
 			}
 		}		
 	}
+	
+	private void calculateClassifiedClassData(){
+		for (Comment comment : this.data) {
+			if (comment.getClassifiedType() == ClassType.ClassTypePositive) {
+				positiveClassifiedCommentsCount ++;
+			} else if (comment.getClassifiedType() == ClassType.ClassTypeNegative) {
+				negativeClassifiedCommentsCount++;
+			}
+		}
+	}
 
 	private void calculateTruePositiveComments(){
 		this.truePositiveClassPositive = DataManager.trueGuessedClassesInTestDataCount(ClassType.ClassTypePositive);
@@ -120,12 +137,12 @@ public class StatisticsManager {
 	}
 
 	private void calculateFalsePositiveComments(){
-		this.falsePositiveClassPositive = DataManager.falseGuessedClassesInTestDataCount(ClassType.ClassTypePositive);
-		this.falsePositiveClassNegative = DataManager.falseGuessedClassesInTestDataCount(ClassType.ClassTypeNegative);
+		this.falsePositiveClassPositive = positiveClassifiedCommentsCount - truePositiveClassPositive;
+		this.falsePositiveClassNegative = negativeClassifiedCommentsCount - truePositiveClassNegative;
 	}
 
 	private void calculateFalseNegativeComments(){
-		this.falseNegativeClassPositive = DataManager.notSelectedCommentsFromClass(ClassType.ClassTypePositive);
-		this.falseNegativeClassNegative = DataManager.notSelectedCommentsFromClass(ClassType.ClassTypeNegative);
+		this.falseNegativeClassPositive = positiveCommentsCount - truePositiveClassPositive;
+		this.falseNegativeClassNegative = negativeCommentsCount - truePositiveClassNegative;
 	}
 }

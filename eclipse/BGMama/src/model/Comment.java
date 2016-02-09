@@ -99,7 +99,7 @@ public class Comment {
 	private void formUniqueWordsArray() {
 		ArrayList<String> textArray = formArrayFromComment();
 		ArrayList<String> addedStrings = new ArrayList<>();
-		uniqueWords = new ArrayList<>();
+		this.uniqueWords = new ArrayList<>();
 		for (String string : textArray) {
 			if(addedStrings.contains(string)){
 				Word word = uniqueWords.get(addedStrings.indexOf(string));
@@ -115,7 +115,7 @@ public class Comment {
 	
 	private ArrayList<String> formArrayFromComment(){
 		// match only bg words with more than 2 letters
-		Pattern pattern = Pattern.compile("[¿-ﬂ‡-ˇ]{2,}");
+		Pattern pattern = Pattern.compile("[–ê-–Ø–∞-—è]{2,}");
 		Matcher matcher = pattern.matcher(this.commentText);
 		
 		ArrayList<String> textArray = new ArrayList<>(); 
