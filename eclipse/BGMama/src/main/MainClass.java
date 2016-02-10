@@ -7,7 +7,7 @@ public class MainClass {
 
 	public static void main(String[] args) {
 //		DataManager.loadTrainingData();
-//		DataManager.printTrainingData();
+		DataManager.printTrainingData();
 //		JSONReader.readStream();
 	}
 

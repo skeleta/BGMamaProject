@@ -10,19 +10,28 @@ public class DataManager {
 	private static final String testDataFilePath = new String("src/Supporting Files/TestData.xml");
 	private static final String unknownDataFilePath = new String("src/Supporting Files/UnknownData.xml");
 	
-	private static ArrayList<Comment> trainingData = new ArrayList<>();
-	private static ArrayList<Comment> testData = new ArrayList<>();
-	private static ArrayList<Comment> unknownData = new ArrayList<>();
+	private static ArrayList<Comment> trainingData = null;
+	private static ArrayList<Comment> testData = null;
+	private static ArrayList<Comment> unknownData = null;
 	
 	public static ArrayList<Comment> getTrainingData() {
+		if (trainingData == null) {
+			loadTrainingData();
+		}
 		return trainingData;
 	}
 	
 	public static ArrayList<Comment> getTestData() {
+		if(testData == null){
+			loadTestData();
+		}
 		return testData;
 	}
 	
 	public static ArrayList<Comment> getUnknownData() {
+		if(unknownData == null) {
+			loadUnknownData();
+		}
 		return unknownData;
 	}
 
@@ -40,33 +49,34 @@ public class DataManager {
 	}
 	
 	public static void loadTrainingData() {
+		setTrainingData(new ArrayList<>());
 		XMLParser.parseFile(trainingDataFilePath, DataType.DataTypeTraining);
 	}
 	
 	public static void loadTestData() {
+		setTestData(new ArrayList<>());
 		XMLParser.parseFile(testDataFilePath, DataType.DataTypeTest);
 	}
 	
 	public static void loadUnknownData() {
+		setUnknownData(new ArrayList<>());
 		XMLParser.parseFile(unknownDataFilePath, DataType.DataTypeUnknown);
 	}
 	
 	public static void printTrainingData() {
-		printData(trainingData);
+		printData(getTrainingData());
 	}
 	
 	public static void printTestData() {
-		printData(testData);
+		printData(getTestData());
 	}
 	
 	public static void printUnknownData () {
-		printData(unknownData);
+		printData(getUnknownData());
 	}
 	
 	private static void printData(ArrayList<Comment> data) {
 		System.out.println(data.toString());
 	}
-
-
 
 }
