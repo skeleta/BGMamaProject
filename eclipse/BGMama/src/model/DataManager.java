@@ -2,12 +2,13 @@ package model;
 
 import java.util.ArrayList;
 
+import model.Comment.ClassType;
 import model.XMLParser.DataType;
 
 public class DataManager {
 	
 	private static final String trainingDataFilePath = new String("src/Supporting Files/TrainingData.xml");
-	private static final String testDataFilePath = new String("src/Supporting Files/TestData.xml");
+	private static final String testDataFilePath = new String("src/Supporting Files//TestData.xml");
 	private static final String unknownDataFilePath = new String("src/Supporting Files/UnknownData.xml");
 	
 	private static ArrayList<Comment> trainingData = null;
@@ -61,6 +62,39 @@ public class DataManager {
 	public static void loadUnknownData() {
 		setUnknownData(new ArrayList<>());
 		XMLParser.parseFile(unknownDataFilePath, DataType.DataTypeUnknown);
+	}
+	
+	public static int trueGuessedClassesInTestDataCount(ClassType type){
+		int n = 0;
+		for (Comment comment : testData) {
+			if(comment.getCommentCategory() == type && comment.getCommentCategory() == comment.getClassifiedType()){
+//				System.out.println("\n" + comment.toString());
+				n++;
+			}
+		}
+		return n;
+	}
+	
+	public static int falseGuessedClassesInTestDataCount(ClassType type){
+		int n = 0;
+		for (Comment comment : testData) {
+			if(comment.getClassifiedType() == type && comment.getCommentCategory() != comment.getClassifiedType()){
+//				System.out.println("\n" + comment.toString());
+				n++;
+			}
+		}
+		return n;
+	}
+	
+	public static int notSelectedCommentsFromClass(ClassType type){
+		int n = 0;
+		for (Comment comment : testData) {
+			if(comment.getCommentCategory() == type && comment.getCommentCategory() != comment.getClassifiedType()){
+//				System.out.println("\n" + comment.toString());
+				n++;
+			}
+		}
+		return n;
 	}
 	
 	public static void printTrainingData() {

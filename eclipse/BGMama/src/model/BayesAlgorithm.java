@@ -1,10 +1,13 @@
 package model;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import model.Comment.ClassType;
 
 public class BayesAlgorithm {
+	private static double negativeProbability = 0;
+	private static double positiveProbability = 0;
 	
 	private static ArrayList<Word> termsDictionary = new ArrayList<>();
 	
@@ -14,26 +17,43 @@ public class BayesAlgorithm {
 		formTermsDictionary(trainingData);
 		
 		ArrayList<Comment> positiveComments = formDocumentsSet(ClassType.ClassTypePositive, trainingData);
-		double positiveProbability = calculatePriorProbability(positiveComments, trainingData);
-		concatenateComments(positiveComments);
-		
-		// text from concatenated comments (positive and negative)
-		ArrayList<Word> text = null;
-		calculateWordsProbability(text, text);
+		positiveProbability = calculatePriorProbability(positiveComments, trainingData);
+		int nPositive = getWordsCountInComments(positiveComments);
 		
 		ArrayList<Comment> negativeComments = formDocumentsSet(ClassType.ClassTypeNegative, trainingData);
-		double negativeProbability = calculatePriorProbability(negativeComments, trainingData);
-		concatenateComments(negativeComments);	
+		negativeProbability = calculatePriorProbability(negativeComments, trainingData);
+		int nNegative = getWordsCountInComments(negativeComments);	
+		
+		calculateWordsProbability(nPositive, nNegative);
 		
 	}
 	
 	private static void formTermsDictionary(ArrayList<Comment> trainingData) {
-		//TODO: save all diff words and symbols in the trainingData into termsDictionary with object Word
+		//save all diff words and symbols in the trainingData into termsDictionary with object Word
 		termsDictionary = new ArrayList<>();
+		ArrayList<String> addedStrings = new ArrayList<>();
+		for (Comment comment : trainingData) {
+			for (Word word : comment.getUniqueWords()) {
+				String term = word.getTerm();
+				if (addedStrings.contains(term)) {
+					// increase occurence of existing word
+					Word addedWord = termsDictionary.get(addedStrings.indexOf(term));
+					addedWord.increaseOccurence(comment.getCommentCategory());
+				} else {
+					// add new word to the dictionary
+					termsDictionary.add(word);
+					addedStrings.add(term);
+				}
+			}
+		}
 	}
 	
-	private static void concatenateComments(ArrayList<Comment> comments) {
-		// concatenate all comment in one text - textj		
+	private static int getWordsCountInComments(ArrayList<Comment> comments) {
+		int wordCount = 0;
+		for (Comment comment : comments) {
+			wordCount += comment.getWordCount();
+		}
+		return wordCount;
 	}
 	
 	private static double calculatePriorProbability(ArrayList<Comment> comments, ArrayList<Comment> trainingData) {		
@@ -41,16 +61,14 @@ public class BayesAlgorithm {
 		return probabilityType;		
 	}
 	
-	private static void calculateWordsProbability(ArrayList<Word> negativeText, ArrayList<Word> positiveText){
+	private static void calculateWordsProbability(int nPositive, int nNegative){
 		// calculate n - common count of diff positions in textj
-		int nNegative = negativeText.size();
-		int nPositive = positiveText.size();
 		
 		for (Word word : termsDictionary) {
-			double positiveProbability = (word.getPositiveOccurence() + 1)/(nPositive + termsDictionary.size());
+			double positiveProbability = (word.getPositiveOccurence() + 1.0)/(nPositive + termsDictionary.size());
 			word.setPositiveProbability(positiveProbability);
 			
-			double negativeProbability = (word.getNegativeOccurence() + 1)/(nNegative + termsDictionary.size());
+			double negativeProbability = (word.getNegativeOccurence() + 1.0)/(nNegative + termsDictionary.size());
 			word.setNegativeProbablity(negativeProbability);
 		}
 	}
@@ -65,5 +83,55 @@ public class BayesAlgorithm {
 		return documentsSet;
 	}
 	
+	public static double getNegativeProbability() {
+		return negativeProbability;
+	}
+
+	public static double getPositiveProbability() {
+		return positiveProbability;
+	}
+	
 	// classifying
+	public static ClassType classifyComment(Comment comment) {
+		ArrayList<Word> allMatchingWords = findAllMatchingWords(comment);
+		double wordsPositiveProbability = 0.0; //(P(word|positiveClass)
+		double wordsNegativeProbability = 0.0; //(P(word|negativeClass)
+		for (Word word : allMatchingWords) {
+			wordsPositiveProbability += Math.log(word.getPositiveProbability());
+			wordsNegativeProbability += Math.log(word.getNegativeProbablity());
+		}
+		
+		wordsPositiveProbability += Math.log(positiveProbability);
+		wordsNegativeProbability += Math.log(negativeProbability);
+		
+		return mostProbableClass(wordsPositiveProbability, wordsNegativeProbability);		
+	}
+	
+	private static ArrayList<Word> findAllMatchingWords(Comment comment){
+		ArrayList<Word> allMatchingWords = new ArrayList<>();
+		for (Word word : comment.getUniqueWords()) {
+			for (Word dictionaryWord : termsDictionary) {
+				if(word.equals(dictionaryWord)) {
+					allMatchingWords.add(dictionaryWord);
+				}
+			}
+		}
+		return allMatchingWords;
+	}
+	
+	private static ClassType mostProbableClass(double positiveProb, double negativeProb) {
+		ClassType type = ClassType.ClassTypeUnknown;
+		if (positiveProb > negativeProb) {
+			type = ClassType.ClassTypePositive;
+		} else if (positiveProb < negativeProb) {
+			type = ClassType.ClassTypeNegative;
+		} else {
+			if (positiveProbability > negativeProbability) {
+				type = ClassType.ClassTypePositive;
+			} else if (positiveProbability < negativeProbability) {
+				type = ClassType.ClassTypeNegative;
+			}
+		}
+		return type;
+	}	
 }
