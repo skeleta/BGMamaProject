@@ -1,4 +1,4 @@
-package model;
+package model.Parsing;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,6 +11,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+
+import model.DataStructure.MessageObject;
 
 
 public class JSONReader {	

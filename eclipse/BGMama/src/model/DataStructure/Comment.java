@@ -1,4 +1,4 @@
-package model;
+package model.DataStructure;
 
 import java.util.ArrayList;
 import java.util.HashSet;

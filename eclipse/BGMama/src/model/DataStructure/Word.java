@@ -1,6 +1,6 @@
-package model;
+package model.DataStructure;
 
-import model.Comment.ClassType;
+import model.DataStructure.Comment.ClassType;
 
 public class Word {
 	

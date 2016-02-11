@@ -1,4 +1,4 @@
-package model;
+package model.Parsing;
 
 import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
@@ -16,6 +16,8 @@ import org.w3c.dom.Attr;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+
+import model.DataStructure.MessageObject;
 
 public class XMLWriter {
 	private static Document openDocument;

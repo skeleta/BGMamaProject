@@ -2,8 +2,10 @@ package model;
 
 import java.util.ArrayList;
 
-import model.Comment.ClassType;
-import model.XMLParser.DataType;
+import model.DataStructure.Comment;
+import model.DataStructure.Comment.ClassType;
+import model.Parsing.XMLParser;
+import model.Parsing.XMLParser.DataType;
 
 public class DataManager {
 	

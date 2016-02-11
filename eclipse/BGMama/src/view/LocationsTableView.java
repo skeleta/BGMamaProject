@@ -15,8 +15,8 @@ import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-import model.Comment;
 import model.DataManager;
+import model.DataStructure.Comment;
 
 public class LocationsTableView extends JFrame {
 

@@ -1,10 +1,10 @@
 package main;
 
-import model.BayesAlgorithm;
-import model.Comment;
-import model.Comment.ClassType;
 import model.DataManager;
 import model.StatisticsManager;
+import model.DataStructure.Comment;
+import model.DataStructure.Comment.ClassType;
+import model.SemanticAnalyses.BayesAlgorithm;
 
 public class MainClass {
 

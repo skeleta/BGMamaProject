@@ -1,9 +1,12 @@
-package model;
+package model.SemanticAnalyses;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-import model.Comment.ClassType;
+import model.DataManager;
+import model.DataStructure.Comment;
+import model.DataStructure.Word;
+import model.DataStructure.Comment.ClassType;
 
 public class BayesAlgorithm {
 	private static double negativeProbability = 0;

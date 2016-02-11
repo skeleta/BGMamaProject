@@ -2,7 +2,8 @@ package model;
 
 import java.util.ArrayList;
 
-import model.Comment.ClassType;
+import model.DataStructure.Comment;
+import model.DataStructure.Comment.ClassType;
 
 public class StatisticsManager {
 

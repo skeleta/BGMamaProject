@@ -1,4 +1,4 @@
-package model;
+package model.DataStructure;
 
 public class Message {
 public String idmsg;
