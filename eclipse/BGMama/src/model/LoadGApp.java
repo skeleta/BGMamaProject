@@ -1,6 +1,7 @@
 package model;
 
 import java.io.File;
+import java.util.Iterator;
 
 import gate.AnnotationSet;
 import gate.Corpus;
@@ -8,6 +9,7 @@ import gate.CorpusController;
 import gate.Document;
 import gate.Factory;
 import gate.Gate;
+import gate.util.FeatureBearer;
 import gate.util.persistence.PersistenceManager;
 
 public class LoadGApp {
@@ -26,8 +28,14 @@ public class LoadGApp {
 			File docPath = new File(DOC_PATH);
 	        Document doc = Factory.newDocument(docPath.toURI().toURL(), UTF_8);
 			Document docAnnotaded = runGApp(doc, corpus, application);
+			//print matched hottels
+			//docAnnotaded.getAnnotations().get("Hotel_Name").iterator().next().getFeatures().get("matchStr")
+			AnnotationSet hotelsAnn = doc.getAnnotations().get("Hotel_Name"); 
+            Iterator hotelsAnnIt = hotelsAnn.iterator(); 
+            while (hotelsAnnIt.hasNext()) {
+            	System.out.println(((FeatureBearer) hotelsAnnIt.next()).getFeatures().get("matchStr").toString());
+            } 
 			return docAnnotaded.getAnnotations();
-			//docAnnotaded.getAnnotations().get("Hotel_Name3").iterator().next().getFeatures().get("rule")
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
