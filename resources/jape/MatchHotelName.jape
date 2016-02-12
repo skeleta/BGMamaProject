@@ -8,4 +8,4 @@ Rule: Hotel_Name
 )[1,4]
 :match
 -->
-:match.Hotel_Name = { rule = "Hotel_Name" }
+:match.Hotel_Name = { rule = "Hotel_Name", matchStr = :match@string }

@@ -12,7 +12,7 @@ public class MainClass {
 	public static void main(String[] args) {
 
 //		DataManager.loadTrainingData();
-		LoadGApp.loadGApp();
+		LoadGApp.executeGApp();
 
 //		DataManager.loadTestData();
 		//		DataManager.printTrainingData();

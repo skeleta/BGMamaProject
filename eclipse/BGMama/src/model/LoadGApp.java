@@ -1,9 +1,6 @@
 package model;
 
 import java.io.File;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.util.ArrayList;
 
 import gate.AnnotationSet;
 import gate.Corpus;
@@ -11,56 +8,37 @@ import gate.CorpusController;
 import gate.Document;
 import gate.Factory;
 import gate.Gate;
-import gate.creole.ResourceInstantiationException;
-import gate.persist.PersistenceException;
-import gate.util.GateException;
 import gate.util.persistence.PersistenceManager;
 
 public class LoadGApp {
+	private static final String BGMAMMAPROJECT_PATH = "D:/FMI_Projects/BGMamaProject";
+	private static final String GAPP_PATH = BGMAMMAPROJECT_PATH + "/resources/app/LocationSearch.gapp";
+	private static final String DOC_PATH = BGMAMMAPROJECT_PATH + "/resources/documents/UnknownData_Small.xml";
+	private static final String CORPUS_NAME = "HotelsFinder Corpus";
+	private static final String UTF_8 = "utf-8";
 	
-	public static void loadGApp() {
-		
+	public static AnnotationSet executeGApp() {
 		try {
 			Gate.init();
 			CorpusController application;
-			File gapp = new File("D:/FMI_Projects/BGMamaProject/resources/app/LocationSearch.gapp");
-			application = (CorpusController) PersistenceManager.loadObjectFromFile(gapp);
-			Corpus corpus =  application.getCorpus();
-			Document doc = executeGApp(corpus, application);
-			AnnotationSet annotations = doc.getAnnotations();
-			
-		} catch (PersistenceException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ResourceInstantiationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (GateException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			application = (CorpusController) PersistenceManager.loadObjectFromFile(new File(GAPP_PATH));
+			Corpus corpus =  Factory.newCorpus(CORPUS_NAME);
+			File docPath = new File(DOC_PATH);
+	        Document doc = Factory.newDocument(docPath.toURI().toURL(), UTF_8);
+			Document docAnnotaded = runGApp(doc, corpus, application);
+			return docAnnotaded.getAnnotations();
+			//docAnnotaded.getAnnotations().get("Hotel_Name3").iterator().next().getFeatures().get("rule")
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return null;
 		}
 	
 	}
-	public static Document executeGApp(Corpus corpus, CorpusController application) throws Exception {
-		File docPath = new File("D:/FMI_Projects/BGMamaProject/resources/documents/UnknownData_Small.xml");
-        Document doc = Factory.newDocument(docPath.toURI().toURL(), "utf-8");
-        
-        // remove the document from the corpus
+	private static Document runGApp(Document doc, Corpus corpus, CorpusController application) throws Exception {
         corpus.clear();
-        
-        // put the document in the corpus 
-        corpus.add(doc); 
-
-        // run the application 
+        corpus.add(doc);
+        application.setCorpus(corpus);
         application.execute(); 
-
-        // remove the document from the corpus again 
         corpus.clear();
         return doc;
 	}
