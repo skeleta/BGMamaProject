@@ -1,0 +1,15 @@
+﻿Phase: HotelNames
+Input: Token Lookup
+Options: control = appelt debug = true
+ 
+Rule: MatchHotelAndPlace
+Priority: 21
+(
+ ({ Lookup.majorType == hotel_type }) ?
+ ({ Token.category == Npfsi} | { Token.category == Npmsi} ) [1,4]
+ ({ Token.string == "-" } | { Token.string == "," } | { Token.string == "в"} | { Token.string == "във"}) ? 
+ ({ Lookup.majorType == geo })
+)
+:match
+-->
+:match.Hotel_Name = { rule = "MatchHotelAndPlace", matchStr = :match@string }

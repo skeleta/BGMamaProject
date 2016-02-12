@@ -1,8 +1,8 @@
-Phase: all
+Phase: HotelNames
 Input: Lookup Token
-Options: debug = true
+Options: control = appelt debug = true
 
-Rule: Hotel_Name2
+Rule: MatchHotelTypeAndName
 Priority: 20  
 (
  ({ Lookup.majorType == hotel_type})
@@ -10,4 +10,4 @@ Priority: 20
 )
 :match
 -->
-:match.Hotel_Name = { rule = "Hotel_Name3", matchStr = :match@string }
+:match.Hotel_Name = { rule = "MatchHotelTypeAndName", matchStr = :match@string }
