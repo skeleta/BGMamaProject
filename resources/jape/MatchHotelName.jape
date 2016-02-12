@@ -1,6 +1,6 @@
 Phase: HotelNames
 Input: Token Lookup
-Options: control = appelt debug = true
+Options: control = appelt
  
 Rule: MatchHotelName
 (

@@ -53,10 +53,10 @@ public class LocationsTableView extends JFrame {
 		};
 		table.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				JTable target = (JTable)e.getSource();
-				int row = target.getSelectedRow();
-				Comment comment = DataManager.getTrainingData().get(row);
-				openFullTextDialog(comment);			
+//				JTable target = (JTable)e.getSource();
+//				int row = target.getSelectedRow();
+//				Comment comment = DataManager.getTrainingData().get(row);
+//				openFullTextDialog(comment);			
 			}
 		});
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -81,7 +81,7 @@ public class LocationsTableView extends JFrame {
 		DefaultTableModel dtm = new DefaultTableModel(0, 0);
 
 		// add header of the table
-		String header[] = new String[] { "Р›РѕРєР°С†РёСЏ", "РљР»Р°СЃРёС„РёС†РёСЂР°РЅР° РєР°С‚РµРіРѕСЂРёСЏ"};
+		String header[] = new String[] { "Коментар", "Категория"};
 
 		// add header in table model     
 		dtm.setColumnIdentifiers(header);

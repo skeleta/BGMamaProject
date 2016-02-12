@@ -13,7 +13,7 @@ import gate.util.FeatureBearer;
 import gate.util.persistence.PersistenceManager;
 
 public class LoadGApp {
-	private static final String BGMAMMAPROJECT_PATH = "D:/BGMamma/BGMamaProject";
+	private static final String BGMAMMAPROJECT_PATH = "D:/FMI_Projects/BGMamaProject";
 	private static final String GAPP_PATH = BGMAMMAPROJECT_PATH + "/resources/app/LocationSearch.gapp";
 	private static final String DOC_PATH = BGMAMMAPROJECT_PATH + "/resources/documents/UnknownData_Small.xml";
 	private static final String CORPUS_NAME = "HotelsFinder Corpus";
