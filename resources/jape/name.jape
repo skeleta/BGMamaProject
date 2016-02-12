@@ -1,0 +1,11 @@
+Phase: HotelNames
+Input: Token Lookup
+Options: control = appelt debug = true
+ 
+Rule: Hotel_Name
+(
+ { Token.category == Npmsi, Token.length > 1, !Lookup }
+)[1,4]
+:match
+-->
+:match.Hotel_Name = { rule = "Hotel_Name" }
