@@ -5,7 +5,7 @@ Options: debug = true
 Rule: Hotel_Name2
 Priority: 20  
 (
- ({ Lookup.majorType == hotel_types})
+ ({ Lookup.majorType == hotel_type})
  ({ Token.category == Npfsi} | { Token.category == Npmsi} )[1,5]
 )
 :match

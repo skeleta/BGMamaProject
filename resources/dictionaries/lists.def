@@ -1,3 +1,4 @@
 BGCities.txt:geo:city
-BGCurorti.txt:geo:curort
-HotelTypes.txt:hotel_types
+BGResorts.txt:geo:resort
+HotelTypes.txt:hotel_type
+HotelNames.txt:name
