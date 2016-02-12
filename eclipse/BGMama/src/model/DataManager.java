@@ -50,17 +50,17 @@ public class DataManager {
 	}
 	
 	public static void loadTrainingData() {
-		setTrainingData(new ArrayList<>());
+		setTrainingData(new ArrayList<Comment>());
 		XMLParser.parseFile(trainingDataFilePath, DataType.DataTypeTraining);
 	}
 	
 	public static void loadTestData() {
-		setTestData(new ArrayList<>());
+		setTestData(new ArrayList<Comment>());
 		XMLParser.parseFile(testDataFilePath, DataType.DataTypeTest);
 	}
 	
 	public static void loadUnknownData() {
-		setUnknownData(new ArrayList<>());
+		setUnknownData(new ArrayList<Comment>());
 		XMLParser.parseFile(unknownDataFilePath, DataType.DataTypeUnknown);
 	}
 	
