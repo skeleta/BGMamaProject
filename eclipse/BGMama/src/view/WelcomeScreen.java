@@ -17,6 +17,8 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import model.BayesAlgorithm;
+import model.Comment;
 import model.DataManager;
 
 public class WelcomeScreen extends JFrame {
@@ -76,8 +78,7 @@ public class WelcomeScreen extends JFrame {
 		findLocationsButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent arg0) {
-				//TODO: should be changed with loading unknown data and parsing it
-				DataManager.loadUnknownData();
+				BayesAlgorithm.startTraining();
 				openLocationsTableView();
 			}
 		});
