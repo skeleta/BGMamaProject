@@ -1,0 +1,12 @@
+Phase: HotelNames
+Input: Lookup
+Options: control = appelt
+
+Rule: MatchHotelNamesFromList
+Priority: 21
+(
+ { Lookup.majorType == geo ,Lookup.minorType == hotel_name }
+)
+:match
+-->
+:match.Hotel_Name = { rule = "MatchHotelNamesFromList", matchStr = :match@string }
