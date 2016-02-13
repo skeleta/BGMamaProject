@@ -26,11 +26,11 @@ import model.BayesAlgorithm;
 import model.Comment;
 import model.Comment.ClassType;
 import model.DataManager;
+import model.Hotel;
 import model.LoadGApp;
 
 public class LocationsTableView extends JFrame {
 
-	private static final String mapsBaseURL = "https://www.google.bg/maps/search/";
 	private ArrayList<String> hotelsUrls = null;
 	private ArrayList<Comment> commentsDataSource = null;
 	private TableViewType type;
@@ -48,7 +48,7 @@ public class LocationsTableView extends JFrame {
 
 	public LocationsTableView(final TableViewType type) {
 		this.type = type;
-		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -75,8 +75,7 @@ public class LocationsTableView extends JFrame {
 					Comment comment = commentsDataSource.get(row);
 					openFullTextDialog(comment.getCommentText());
 				} else if (type == TableViewType.TableViewTypeFindHotels) {
-					openFullTextDialog(hotelsUrls.get(row));
-//					openUrl(hotelsUrls.get(row));
+					openExternalViewer(hotelsUrls.get(row));
 				}
 							
 			}
@@ -91,6 +90,17 @@ public class LocationsTableView extends JFrame {
 
 		JScrollPane scrollPanel = new JScrollPane(table, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		contentPane.add(scrollPanel, BorderLayout.CENTER);
+	}
+	
+	private void openExternalViewer(String url) {
+		try {
+			ExternalViewer viewer = new ExternalViewer(url);
+			viewer.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+			viewer.setVisible(true);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	private void openFullTextDialog(String text) {
@@ -144,7 +154,6 @@ public class LocationsTableView extends JFrame {
 				break;
 
 			default:
-
 				break;
 			}
 			Object [] rowObject = new Object[] { text, type};
@@ -153,30 +162,16 @@ public class LocationsTableView extends JFrame {
 	}
 
 	private void addHotelsRowsData(DefaultTableModel dataModel){
-		AnnotationSet hotelsAnnotationSet = LoadGApp.executeGApp();
-		hotelsUrls = new ArrayList<String>();
-		Iterator hotelsAnnIt = hotelsAnnotationSet.get("Hotel_Name").iterator(); 
-		while (hotelsAnnIt.hasNext()) {
-			String name = ((FeatureBearer) hotelsAnnIt.next()).getFeatures().get("matchStr").toString();
-			String url = mapsBaseURL + name;
-			hotelsUrls.add(url);
-			Object [] rowObject = new Object[] { name,  url };
+		ArrayList<Hotel> hotels = LoadGApp.executeGApp();
+		hotelsUrls = new ArrayList<>();
+		for (Hotel hotel : hotels) {
+			System.out.println("Hotel name: " + hotel.getName() + " Hotel Url:" + hotel.getUrl());
+			hotelsUrls.add(hotel.getUrl());
+			
+			Object [] rowObject = new Object[] { hotel.getName(),  hotel.getUrl() };
 			dataModel.addRow(rowObject);
 		}
 	}
 
-	private static void openUrl(String url) {
-		if (Desktop.isDesktopSupported()) {	     
-			try {
-				Desktop.getDesktop().browse(new URI(url));
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (URISyntaxException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-		} else { /* TODO: error handling */ }
-	}
+	
 }
