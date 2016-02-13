@@ -13,15 +13,12 @@ import java.util.Iterator;
 
 import javax.swing.JDialog;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
-
-import org.eclipse.wb.internal.draw2d.Label;
 
 import gate.AnnotationSet;
 import gate.util.FeatureBearer;
