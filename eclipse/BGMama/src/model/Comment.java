@@ -115,7 +115,7 @@ public class Comment {
 	
 	private ArrayList<String> formArrayFromComment(){
 		// match only bg words with more than 2 letters
-		Pattern pattern = Pattern.compile("[Ğ-Ğ¯Ğ°-Ñ]{2,}");
+		Pattern pattern = Pattern.compile("[à-ÿÀ-ß]{2,}");
 		Matcher matcher = pattern.matcher(this.commentText);
 		
 		ArrayList<String> textArray = new ArrayList<>(); 

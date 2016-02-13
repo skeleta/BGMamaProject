@@ -17,7 +17,7 @@ import gate.util.persistence.PersistenceManager;
 public class LoadGApp {
 	private static final String BGMAMMAPROJECT_PATH = "D:/FMI_Projects/BGMamaProject";
 	private static final String GAPP_PATH = BGMAMMAPROJECT_PATH + "/resources/app/LocationSearch.gapp";
-	private static final String DOC_PATH = BGMAMMAPROJECT_PATH + "/resources/documents/UnknownData_Small.xml";
+	private static final String DOC_PATH = BGMAMMAPROJECT_PATH + "/resources/documents/unknown_data_200.xml";
 	private static final String CORPUS_NAME = "HotelsFinder Corpus";
 	private static final String UTF_8 = "utf-8";
 	
@@ -43,8 +43,8 @@ public class LoadGApp {
 	}
 	
 	private static ArrayList<Hotel> formHotelsList(AnnotationSet docAnnotaded){
-		//print matched hottels
-//		docAnnotaded.getAnnotations().get("Hotel_Name").iterator().next().getFeatures().get("matchStr")
+		// print matched hottels
+		// docAnnotaded.getAnnotations().get("Hotel_Name").iterator().next().getFeatures().get("matchStr")
 		ArrayList<Hotel> hotels = new ArrayList<>();
 		AnnotationSet hotelsAnn = docAnnotaded.get("Hotel_Name"); 
         Iterator hotelsAnnIt = hotelsAnn.iterator(); 

@@ -21,14 +21,14 @@
       <docList>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>UnknownData_Small.xml_00048</resourceName>
+          <resourceName>unknown_data_3600.xml_0006E</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../documents/UnknownData_Small.xml</urlString>
+                  <urlString>$relpath$../documents/unknown_data_3600.xml</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
@@ -68,7 +68,7 @@
         </gate.util.persistence.LRPersistence>
       </docList>
       <resourceType>gate.corpora.CorpusImpl</resourceType>
-      <resourceName>Corpus for UnknownData_Small.xml_00048</resourceName>
+      <resourceName>Corpus for unknown_data_3600.xml_0006E</resourceName>
       <initParams class="gate.util.persistence.MapPersistence">
         <mapType>gate.util.SimpleFeatureMapImpl</mapType>
         <localMap>
@@ -315,6 +315,70 @@
             </localMap>
           </runtimeParams>
           <resourceType>gate.creole.Transducer</resourceType>
+          <resourceName>MatchHotelAndPlace</resourceName>
+          <initParams class="gate.util.persistence.MapPersistence">
+            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+            <localMap>
+              <entry>
+                <string>binaryGrammarURL</string>
+                <null/>
+              </entry>
+              <entry>
+                <string>annotationAccessors</string>
+                <null/>
+              </entry>
+              <entry>
+                <string>grammarURL</string>
+                <gate.util.persistence.PersistenceManager-URLHolder>
+                  <urlString>$relpath$../jape/MatchHotelAndPlace.jape</urlString>
+                </gate.util.persistence.PersistenceManager-URLHolder>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
+              </entry>
+              <entry>
+                <string>operators</string>
+                <null/>
+              </entry>
+            </localMap>
+          </initParams>
+          <features class="gate.util.persistence.MapPersistence">
+            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+            <localMap/>
+          </features>
+        </gate.util.persistence.LanguageAnalyserPersistence>
+        <gate.util.persistence.LanguageAnalyserPersistence>
+          <runtimeParams class="gate.util.persistence.MapPersistence">
+            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+            <localMap>
+              <entry>
+                <string>enableDebugging</string>
+                <boolean>false</boolean>
+              </entry>
+              <entry>
+                <string>corpus</string>
+                <null/>
+              </entry>
+              <entry>
+                <string>outputASName</string>
+                <null/>
+              </entry>
+              <entry>
+                <string>inputASName</string>
+                <null/>
+              </entry>
+              <entry>
+                <string>ontology</string>
+                <null/>
+              </entry>
+              <entry>
+                <string>document</string>
+                <null/>
+              </entry>
+            </localMap>
+          </runtimeParams>
+          <resourceType>gate.creole.Transducer</resourceType>
           <resourceName>MatchHotelName</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
@@ -379,7 +443,7 @@
             </localMap>
           </runtimeParams>
           <resourceType>gate.creole.Transducer</resourceType>
-          <resourceName>MatchHotelTypeAndName</resourceName>
+          <resourceName>MatchHotelNamesFromList</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
@@ -394,7 +458,7 @@
               <entry>
                 <string>grammarURL</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../jape/MatchHotelTypeAndName.jape</urlString>
+                  <urlString>$relpath$../jape/MatchHotelNamesFromList.jape</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
@@ -443,7 +507,7 @@
             </localMap>
           </runtimeParams>
           <resourceType>gate.creole.Transducer</resourceType>
-          <resourceName>MatchHotelAndPlace</resourceName>
+          <resourceName>MatchHotelTypeAndName</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
@@ -458,7 +522,7 @@
               <entry>
                 <string>grammarURL</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../jape/MatchHotelAndPlace.jape</urlString>
+                  <urlString>$relpath$../jape/MatchHotelTypeAndName.jape</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
