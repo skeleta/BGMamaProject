@@ -6,7 +6,7 @@ Rule: MatchHotelAndPlace
 Priority: 21
 (
  ({ Lookup.majorType == hotel_type }) ?
- ({ Token.category == Npfsi} | { Token.category == Npmsi} ) [1,4]
+ ({ Token.category == Npfsi, !Lookup.majorType == geo} | { Token.category == Npmsi, !Lookup.majorType == geo } ) [1,4]
  ({ Token.string == "-" } | { Token.string == "," } | { Token.string == "в"} | { Token.string == "във"}) ? 
  ({ Lookup.majorType == geo })
 )
