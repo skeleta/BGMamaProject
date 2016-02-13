@@ -63,7 +63,11 @@ public class XMLWriter {
 
 			comment.setAttribute("id", obj.msgcontent.msg.idmsg);
 			comment.setAttribute("category", "unknown");
-			comment.appendChild(openDocument.createTextNode(obj.msgcontent.msg.msgbody));
+			comment.appendChild(openDocument.createTextNode(obj.msgcontent.msg.getMsgbody()));
+			
+			Element subject = openDocument.createElement("topic");
+			subject.appendChild(openDocument.createTextNode(obj.msgcontent.msg.getMsgsubject()));
+			comment.appendChild(subject);
 		} catch (DOMException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

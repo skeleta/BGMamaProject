@@ -9,7 +9,7 @@ public class DataManager {
 	
 	private static final String trainingDataFilePath = new String("src/Supporting Files/TrainingData.xml");
 	private static final String testDataFilePath = new String("src/Supporting Files//TestData.xml");
-	private static final String unknownDataFilePath = new String("src/Supporting Files/UnknownData.xml");
+	private static final String unknownDataFilePath = new String("src/Supporting Files/UnknownDataAll.xml");
 	
 	private static ArrayList<Comment> trainingData = null;
 	private static ArrayList<Comment> testData = null;

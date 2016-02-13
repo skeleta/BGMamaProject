@@ -24,25 +24,26 @@ public class JSONReader {
 			reader.beginArray();
 			System.out.println("Searching...");
 			int br = 0;
-			XMLWriter.createFile("unknown_data_"+br);
+			XMLWriter.createFile("unknown_data_" + br);
 			while (reader.hasNext()) {
 				
 				// Read data into object model
 			
-				MessageObject msg =  gson.fromJson(reader, MessageObject.class);       	
+				MessageObject msg =  gson.fromJson(reader, MessageObject.class);
 
 				String topic = msg.msgcontent.msg.idtopic;
 				String topicName = msg.msgcontent.msg.msgsubject;
 				if (topicName.toLowerCase().contains("хотел")) {
-					if (br % 1000 == 0) {
+					if (br % 100 == 0) {
 						XMLWriter.closeFile();
 						XMLWriter.createFile("unknown_data_" + br);
 						System.out.println(br);
 					}
-					
+					br++;
 					XMLWriter.writeObjectInfoFile(msg);
 				}           
-				br++;
+				
+			
 			}
 			System.out.println("Reader was closed.");
 			XMLWriter.closeFile();
