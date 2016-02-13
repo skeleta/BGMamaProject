@@ -52,7 +52,7 @@ public class WelcomeScreen extends JFrame {
 	 * Create the frame.
 	 */
 	public WelcomeScreen() {
-		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 197);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(245, 245, 245));
