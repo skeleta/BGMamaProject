@@ -6,9 +6,16 @@ import model.Comment.ClassType;
 
 public class StatisticsManager {
 
+	private enum StatisticsType {
+		StatisticsTypeData,
+		StatisticsTypeNumbers
+	}
+
+	private StatisticsType type;
+
 	private int negativeCommentsCount = 0;
 	private int positiveCommentsCount = 0;
-	
+
 	private int negativeClassifiedCommentsCount = 0;
 	private int positiveClassifiedCommentsCount = 0;
 
@@ -18,15 +25,23 @@ public class StatisticsManager {
 
 	private int truePositiveClassNegative = 0;
 	private int falsePositiveClassNegative = 0;
-	private int falseNegativeClassNegative = 0;
+	private int falseNegativeClassNegative = 0;	
 
-	private ArrayList<Comment> data;	
+
+	public StatisticsManager(int truePositive, int falsePositive,
+			int falseNegative) {
+		super();
+		type = StatisticsType.StatisticsTypeNumbers;
+		this.truePositiveClassPositive = truePositive;
+		this.falsePositiveClassPositive = falsePositive;
+		this.falseNegativeClassPositive = falseNegative;
+	}
 
 	public StatisticsManager(ArrayList<Comment> data) {
 		super();
-		this.data = data;
-		calculateRealDataClassCommentsCount();
-		calculateClassifiedClassData();
+		type = StatisticsType.StatisticsTypeData;
+		calculateRealDataClassCommentsCount(data);
+		calculateClassifiedClassData(data);
 		//first calculate positive comments
 		calculateTruePositiveComments();
 		//after that calculate false positive
@@ -34,22 +49,39 @@ public class StatisticsManager {
 		// and false negative
 		calculateFalseNegativeComments();
 	}
-	
+
 	public void printStatistics(){
+		printPositiveClassStatistics();
+
+		if (type ==StatisticsType.StatisticsTypeData) {
+			printNegativeClassStatistics();
+			printOverallStatistics();
+		}
+	}
+
+	private void printOverallStatistics() {
 		System.out.format("-------------------------------------- %n");
-		 System.out.format("Precision positive: %1$.5f %n", calculatePrecisionPositiveClass());
-		 System.out.format("Precision negative: %1$.5f %n", calculatePrecisionNegativeClass());
-		 System.out.format("Precision overall : %1$.5f %n", calculatePrecisionOverall());
-		 
-		 System.out.format("-------------------------------------- %n");
-		 System.out.format("Recall positive: %1$.5f %n", calculateRecallPositiveClass());
-		 System.out.format("Recall negative: %1$.5f %n", calculateRecallNegativeClass());
-		 System.out.format("Recall overall : %1$.5f %n", calculateRecallOverall());
-		 
-		 System.out.format("-------------------------------------- %n");
-		 System.out.format("F1 positive: %1$.5f %n", calculateF1PositiveClass());
-		 System.out.format("F1 negative: %1$.5f %n", calculateF1NegativeClass());
-		 System.out.format("F1 overall : %1$.5f %n", calculateF1Overall());
+		System.out.format("Precision overall : %1$.5f %n", calculatePrecisionOverall());
+		System.out.format("Recall overall : %1$.5f %n", calculateRecallOverall());
+		System.out.format("F1 overall : %1$.5f %n", calculateF1Overall());
+	}
+
+	private void printNegativeClassStatistics() {
+		System.out.format("-------------------------------------- %n");
+		System.out.format("Precision negative: %1$.5f %n", calculatePrecisionNegativeClass());		
+		System.out.format("Recall negative: %1$.5f %n", calculateRecallNegativeClass());
+		System.out.format("F1 negative: %1$.5f %n", calculateF1NegativeClass());
+
+	}
+
+	private void printPositiveClassStatistics() {
+		String addClass = type == StatisticsType.StatisticsTypeData ? "positive" : "";
+		System.out.format("-------------------------------------- %n");
+		System.out.format("Precision %s: %1.5f %n", addClass, calculatePrecisionPositiveClass());
+		System.out.format("Recall %s: %1.5f %n", addClass, calculateRecallPositiveClass());
+		System.out.format("F1 %s: %1.5f %n", addClass,calculateF1PositiveClass());
+
+
 	}
 
 	// precision
@@ -111,8 +143,8 @@ public class StatisticsManager {
 	}
 
 	//Help methods
-	private void calculateRealDataClassCommentsCount(){		
-		for (Comment comment : this.data) {
+	private void calculateRealDataClassCommentsCount(ArrayList<Comment> data){		
+		for (Comment comment : data) {
 			if (comment.isPositive()) {
 				positiveCommentsCount ++;
 			} else if (comment.isNegative()) {
@@ -120,9 +152,9 @@ public class StatisticsManager {
 			}
 		}		
 	}
-	
-	private void calculateClassifiedClassData(){
-		for (Comment comment : this.data) {
+
+	private void calculateClassifiedClassData(ArrayList<Comment> data){
+		for (Comment comment : data) {
 			if (comment.getClassifiedType() == ClassType.ClassTypePositive) {
 				positiveClassifiedCommentsCount ++;
 			} else if (comment.getClassifiedType() == ClassType.ClassTypeNegative) {
