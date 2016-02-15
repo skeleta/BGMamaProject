@@ -5,7 +5,7 @@ Options: control = appelt
 Rule: MatchHotelNamesFromList
 Priority: 21
 (
- { Lookup.majorType == geo ,Lookup.minorType == hotel_name }
+ { Lookup.majorType == name }
 )
 :match
 -->

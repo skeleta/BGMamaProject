@@ -8,6 +8,7 @@ Priority: 21
  ({ Lookup.majorType == hotel_type }) ?
  ({ Token.category == Npfsi, !Lookup.majorType == geo} | { Token.category == Npmsi, !Lookup.majorType == geo } ) [1,4]
  ({ Token.string == "-" } | { Token.string == "," } | { Token.string == "в"} | { Token.string == "във"}) ? 
+ ({ Token.string == "гр." } | { Token.string == "с." } | { Token.string == "гр"} | { Token.string == "с"} | { Token.string == "град"} | { Token.string == "село"}) ? 
  ({ Lookup.majorType == geo })
 )
 :match

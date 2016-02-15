@@ -5,7 +5,7 @@ Options: control = appelt
 Rule: MatchHotelName
  ({Token.string != ".", Token.string != "на"})
 (
- { Token.category == Npmsi, Token.length > 2, !Lookup }
+ { Token.category == Npmsi, Token.length > 2, !Lookup, Token.orth == upperInitial }
 )[2,4]
 :match
 -->

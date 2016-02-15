@@ -17,7 +17,7 @@ import gate.util.persistence.PersistenceManager;
 public class LoadGApp {
 	private static final String BGMAMMAPROJECT_PATH = "D:/FMI_Projects/BGMamaProject";
 	private static final String GAPP_PATH = BGMAMMAPROJECT_PATH + "/resources/app/LocationSearch.gapp";
-	private static final String DOC_PATH = BGMAMMAPROJECT_PATH + "/resources/documents/unknown_data_200.xml";
+	private static final String DOC_PATH = BGMAMMAPROJECT_PATH + "/resources/documents/unknown_data_400.xml";
 	private static final String CORPUS_NAME = "HotelsFinder Corpus";
 	private static final String UTF_8 = "utf-8";
 	
@@ -53,7 +53,8 @@ public class LoadGApp {
         	String hotelName = featureMap.get("matchStr").toString();
         	hotels.add(new Hotel(hotelName));
         	System.out.println(featureMap);
-        } 
+        }
+        System.out.println("Total matched: " + hotelsAnn.size());
         return hotels;
 	}
 	private static Document runGApp(Document doc, Corpus corpus, CorpusController application) throws Exception {
