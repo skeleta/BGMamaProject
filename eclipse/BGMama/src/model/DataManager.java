@@ -1,5 +1,9 @@
 package model;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import model.Comment.ClassType;
@@ -10,10 +14,13 @@ public class DataManager {
 	private static final String trainingDataFilePath = new String("src/Supporting Files/TrainingData.xml");
 	private static final String testDataFilePath = new String("src/Supporting Files//TestData.xml");
 	private static final String unknownDataFilePath = new String("src/Supporting Files/UnknownDataAll.xml");
+	private static final String bgStopWordsFilePath = new String("src/Supporting Files/bulgarianST.txt");
 	
 	private static ArrayList<Comment> trainingData = null;
 	private static ArrayList<Comment> testData = null;
 	private static ArrayList<Comment> unknownData = null;
+	
+	private static ArrayList<String> bgStopWords = null;
 	
 	public static ArrayList<Comment> getTrainingData() {
 		if (trainingData == null) {
@@ -34,6 +41,15 @@ public class DataManager {
 			loadUnknownData();
 		}
 		return unknownData;
+	}
+	
+	
+
+	public static ArrayList<String> getBgStopWords() {
+		if(bgStopWords == null) {
+			saveStopWords();
+		}
+		return bgStopWords;
 	}
 
 	protected static void setTrainingData(ArrayList<Comment> trainingData) {
@@ -111,6 +127,44 @@ public class DataManager {
 	
 	private static void printData(ArrayList<Comment> data) {
 		System.out.println(data.toString());
+	}
+	
+	
+	// help methods
+	private static void saveStopWords() {
+		BufferedReader br = null;
+	
+			try {
+				FileReader fileReader = new FileReader(bgStopWordsFilePath);
+				br = new BufferedReader(fileReader);
+				bgStopWords = new ArrayList<>();
+				String line = br.readLine();
+				while (line != null) {
+				   bgStopWords.add(line);
+				    line = br.readLine();
+				}
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				try {
+					br.close();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				try {
+					br.close();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		    
+	
+		    
+		
 	}
 
 }
