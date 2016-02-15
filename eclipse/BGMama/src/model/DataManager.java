@@ -1,6 +1,7 @@
 package model;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -15,12 +16,14 @@ public class DataManager {
 	private static final String testDataFilePath = new String("src/Supporting Files//TestData.xml");
 	private static final String unknownDataFilePath = new String("src/Supporting Files/UnknownDataAll.xml");
 	private static final String bgStopWordsFilePath = new String("src/Supporting Files/bulgarianST.txt");
+	private static final String testCommentHotelsPath = new String("src/Supporting Files/hotels_in_test.txt");
 	
 	private static ArrayList<Comment> trainingData = null;
 	private static ArrayList<Comment> testData = null;
 	private static ArrayList<Comment> unknownData = null;
 	
 	private static ArrayList<String> bgStopWords = null;
+	private static ArrayList<String> testCommentHotels = null;
 	
 	public static ArrayList<Comment> getTrainingData() {
 		if (trainingData == null) {
@@ -41,15 +44,23 @@ public class DataManager {
 			loadUnknownData();
 		}
 		return unknownData;
-	}
-	
-	
+	}	
 
 	public static ArrayList<String> getBgStopWords() {
 		if(bgStopWords == null) {
-			saveStopWords();
+			bgStopWords = new ArrayList<>();
+			saveData(bgStopWords, bgStopWordsFilePath);
 		}
 		return bgStopWords;
+	}
+
+	
+	public static ArrayList<String> getTestCommentHotels() {
+		if(testCommentHotels == null){
+			testCommentHotels = new ArrayList<>();
+			saveData(testCommentHotels, testCommentHotelsPath);
+		}
+		return testCommentHotels;
 	}
 
 	protected static void setTrainingData(ArrayList<Comment> trainingData) {
@@ -131,16 +142,15 @@ public class DataManager {
 	
 	
 	// help methods
-	private static void saveStopWords() {
+	private static void saveData(ArrayList<String> array, String path) {
 		BufferedReader br = null;
 	
 			try {
-				FileReader fileReader = new FileReader(bgStopWordsFilePath);
+				FileReader fileReader = new FileReader(new File(path));
 				br = new BufferedReader(fileReader);
-				bgStopWords = new ArrayList<>();
 				String line = br.readLine();
 				while (line != null) {
-				   bgStopWords.add(line);
+					array.add(line);
 				    line = br.readLine();
 				}
 			} catch (FileNotFoundException e) {

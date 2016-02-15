@@ -2,3 +2,4 @@ BGCities.txt:geo:city
 BGResorts.txt:geo:resort
 HotelTypes.txt:hotel_type
 HotelNames.txt:name
+Blacklist.txt:blacklist

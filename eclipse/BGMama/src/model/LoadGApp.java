@@ -18,21 +18,27 @@ public class LoadGApp {
 	private static final String BGMAMMAPROJECT_PATH = "D:/FMI_Projects/BGMamaProject";
 	private static final String GAPP_PATH = BGMAMMAPROJECT_PATH + "/resources/app/LocationSearch.gapp";
 	private static final String DOC_PATH = BGMAMMAPROJECT_PATH + "/resources/documents/unknown_data_400.xml";
+	private static final String TEST_DOC_PATH = BGMAMMAPROJECT_PATH + "/resources/documents/test_f1.xml";
 	private static final String CORPUS_NAME = "HotelsFinder Corpus";
 	private static final String UTF_8 = "utf-8";
 	
 	public static ArrayList<Hotel> executeGApp() {
-		AnnotationSet annotations = makeAnnotationSet();
+		AnnotationSet annotations = makeAnnotationSet(DOC_PATH);
 		return formHotelsList(annotations);	
 	}
 	
-	private static AnnotationSet makeAnnotationSet() {
+	public static ArrayList<Hotel> executeGAppWithTestComment() {
+		AnnotationSet annotations = makeAnnotationSet(TEST_DOC_PATH);
+		return formHotelsList(annotations);	
+	}
+	
+	private static AnnotationSet makeAnnotationSet(String path) {
 		try {
 			Gate.init();
 			CorpusController application;
 			application = (CorpusController) PersistenceManager.loadObjectFromFile(new File(GAPP_PATH));
 			Corpus corpus =  Factory.newCorpus(CORPUS_NAME);
-			File docPath = new File(DOC_PATH);
+			File docPath = new File(path);
 	        Document doc = Factory.newDocument(docPath.toURI().toURL(), UTF_8);
 			Document docAnnotaded = runGApp(doc, corpus, application);
 			return docAnnotaded.getAnnotations();

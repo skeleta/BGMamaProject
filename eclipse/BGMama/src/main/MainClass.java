@@ -1,8 +1,11 @@
 package main;
 
+import java.util.ArrayList;
+
 import model.BayesAlgorithm;
 import model.Comment;
 import model.DataManager;
+import model.Hotel;
 import model.JSONReader;
 import model.LoadGApp;
 import model.StatisticsManager;
@@ -11,21 +14,34 @@ public class MainClass {
 
 	public static void main(String[] args) {
 
-		//		DataManager.loadTrainingData();
-				LoadGApp.executeGApp();
-//		DataManager.printUnknownData();
-
-		//		DataManager.loadTestData();
-		//		DataManager.printTrainingData();
+		// Statistics - Bayes
 				BayesAlgorithm.startTraining();
 				for (Comment comment : DataManager.getTestData()) {
 					comment.setClassifiedType(BayesAlgorithm.classifyComment(comment));
-					//			break;
 				}
 				StatisticsManager statisticsManager = new StatisticsManager(DataManager.getTestData());
 				statisticsManager.printStatistics();
-
-//		JSONReader.readStream();
+				
+				//Statistics - Hotels
+				
+				ArrayList<Hotel> foundHotels = LoadGApp.executeGAppWithTestComment();
+				ArrayList<String> locations = DataManager.getTestCommentHotels();
+				
+				int tp = 0;
+				
+				for (Hotel hotel : foundHotels) {
+					for (String string : locations) {
+						if(string.equals(hotel.getName())) {
+							tp++;
+						}
+					}					
+				}
+				
+				int fp = foundHotels.size() - tp;
+				int fn = locations.size() - tp;
+				
+				StatisticsManager statisticsManager2 = new StatisticsManager(tp,fp,fn);
+				statisticsManager2.printStatistics();
 
 	}
 

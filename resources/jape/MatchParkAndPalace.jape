@@ -1,0 +1,13 @@
+Phase: HotelNames
+Input: Token Lookup Sentence
+Options: control = appelt
+ 
+Rule: MatchParkAndPalace
+((
+ { Token.category == Npmsi, Token.length > 2 } | 
+ { Token.category == Npfsi, Token.length > 2 }
+)
+( { Token.string == "парк" } | { Token.string == "Парк" } | { Token.string == "палас" } | { Token.string == "Палас"}))
+:match
+-->
+:match.Hotel_Name = { rule = "MatchParkAndPalace", matchStr = :match@string }

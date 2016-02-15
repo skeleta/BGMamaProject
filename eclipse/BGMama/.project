@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/Supporting Files/UnknownData_Small.xml</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/resources/documents/UnknownData_Small.xml</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>
