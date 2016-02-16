@@ -3,7 +3,7 @@ Input: Lookup
 Options: control = appelt
 
 Rule: MatchHotelNamesFromList
-Priority: 21
+Priority: 15
 (
  { Lookup.majorType == name }
 )

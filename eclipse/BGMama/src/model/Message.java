@@ -19,9 +19,9 @@ public String getMsgbody() {
 }
 
 private String htmlToPlainText(String html) {
-	String text = html.replaceAll("\\<[^>]*>|&[^;]*;","");	
-	text = text.replaceAll("\\[[^\\]]*]", "");
-	text = text.replaceAll("\\:[^:]*:", "");
+	String text = html.replaceAll("\\<[^>]*>|&[^;]*;"," ");	
+	text = text.replaceAll("\\[[^\\]]*]", " ");
+	text = text.replaceAll("\\:[^:]*:", " ");
     return text;
 }
 

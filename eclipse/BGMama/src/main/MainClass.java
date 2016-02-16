@@ -15,33 +15,34 @@ public class MainClass {
 	public static void main(String[] args) {
 
 		// Statistics - Bayes
-				BayesAlgorithm.startTraining();
-				for (Comment comment : DataManager.getTestData()) {
-					comment.setClassifiedType(BayesAlgorithm.classifyComment(comment));
+		BayesAlgorithm.startTraining();
+		for (Comment comment : DataManager.getTestData()) {
+			comment.setClassifiedType(BayesAlgorithm.classifyComment(comment));
+		}
+		StatisticsManager statisticsManager = new StatisticsManager(DataManager.getTestData());
+		statisticsManager.printStatistics();
+
+		//Statistics - Hotels
+
+		ArrayList<Hotel> foundHotels = LoadGApp.executeGAppWithTestComment();
+		ArrayList<String> locations = DataManager.getTestCommentHotels();
+
+		int tp = 0;
+
+		for (Hotel hotel : foundHotels) {
+			for (String string : locations) {
+				if(string.equals(hotel.getName())) {
+					tp++;
 				}
-				StatisticsManager statisticsManager = new StatisticsManager(DataManager.getTestData());
-				statisticsManager.printStatistics();
-				
-				//Statistics - Hotels
-				
-				ArrayList<Hotel> foundHotels = LoadGApp.executeGAppWithTestComment();
-				ArrayList<String> locations = DataManager.getTestCommentHotels();
-				
-				int tp = 0;
-				
-				for (Hotel hotel : foundHotels) {
-					for (String string : locations) {
-						if(string.equals(hotel.getName())) {
-							tp++;
-						}
-					}					
-				}
-				
-				int fp = foundHotels.size() - tp;
-				int fn = locations.size() - tp;
-				
-				StatisticsManager statisticsManager2 = new StatisticsManager(tp,fp,fn);
-				statisticsManager2.printStatistics();
+			}					
+		}
+
+		int fp = foundHotels.size() - tp;
+		int fn = locations.size() - tp;
+
+		StatisticsManager statisticsManager2 = new StatisticsManager(tp,fp,fn);
+		statisticsManager2.printStatistics();
+		//		JSONReader.readStream();
 
 	}
 
