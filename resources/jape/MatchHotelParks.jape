@@ -6,7 +6,8 @@ Rule: MatchHotelParks
  ({Token.string != ".", Token.string != "на"})
 (
  { Token.category == Npmsi, Token.length > 2, !Lookup } | 
- { Token.category == Npfsi, Token.length > 2, !Lookup }
+ { Token.category == Npfsi, Token.length > 2, !Lookup } | 
+ { Token.category == Npnsi, Token.length > 2, !Lookup }
 )[2,4]
 ( { Token.string == "парк" } | { Token.string == "Парк" })
 :match

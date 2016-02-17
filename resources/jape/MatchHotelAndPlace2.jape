@@ -6,7 +6,7 @@ Rule: MatchHotelAndPlace2
 Priority: 21
 (
  ({ Lookup.majorType == hotel_type })
- ({ Token.category == Npfsi} | { Token.category == Npmsi} ) [1,4]
+ ({ Token.category == Npfsi} | { Token.category == Npmsi} | { Token.category == Npnsi}) [1,4]
  ({ Token.string == "-" } | { Token.string == "," } | { Token.string == "в"} | { Token.string == "във"}) ? 
  ({ Token.string == "гр." } | { Token.string == "с." } | { Token.string == "гр"} | { Token.string == "с"} | { Token.string == "град"} | { Token.string == "село"}) ? 
  ({ Lookup.majorType == geo })

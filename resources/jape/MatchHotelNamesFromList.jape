@@ -1,9 +1,9 @@
 Phase: HotelNames
 Input: Lookup
-Options: control = appelt
+Options: control = brill
 
 Rule: MatchHotelNamesFromList
-Priority: 15
+Priority: 20
 (
  { Lookup.majorType == name }
 )

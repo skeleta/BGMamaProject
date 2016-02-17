@@ -1,0 +1,13 @@
+Phase: HotelNames
+Input: Lookup Token
+Options: control = appelt
+
+Rule: MatchHotelTypeAndName
+Priority: 20  
+(
+ ({ Lookup.majorType == hotel_type})
+ ({ Token.category == Npfsi} | { Token.category == Npmsi} | { Token.category == Npnsi} ) [2,5]
+)
+:match
+-->
+:match.Hotel_Name = { rule = "MatchHotelTypeAndName", matchStr = :match@string }
