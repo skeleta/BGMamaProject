@@ -9,6 +9,13 @@ Macro: NAME_UPPER_INITIAL
 	{ Token.category == Npnsi, Token.length > 2, !Lookup, Token.orth == upperInitial }
 )
 
+Macro: NAME
+(
+	{ Token.category == Npmsi, Token.length > 2, !Lookup, !Token.orth == allCaps } |
+	{ Token.category == Npfsi, Token.length > 2, !Lookup, !Token.orth == allCaps } |
+	{ Token.category == Npnsi, Token.length > 2, !Lookup, !Token.orth == allCaps }
+)
+
 Macro: NOT_PUNCTUATION
 (
 	{Token.string != ".", Token.string != "на", Token.string != "!", Token.string != ":"}
@@ -16,7 +23,8 @@ Macro: NOT_PUNCTUATION
  
 Rule: MatchHotelName
 ( NOT_PUNCTUATION )
-( NAME_UPPER_INITIAL )[2,4]
+( NAME_UPPER_INITIAL )
+( NAME_UPPER_INITIAL | NAME )[2,4]
 :match
 -->
 :match.Hotel_Name = { rule = "MatchHotelName", matchStr = :match@string }

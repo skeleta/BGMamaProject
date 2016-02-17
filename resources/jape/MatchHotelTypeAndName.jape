@@ -15,12 +15,19 @@ Macro: SAINT_DOT
 ({ Token.string == "." })
 )
 
+Macro: NAME
+(
+	{ Token.category == Npmsi, Token.length > 2, !Lookup, !Token.orth == allCaps } |
+	{ Token.category == Npfsi, Token.length > 2, !Lookup, !Token.orth == allCaps } |
+	{ Token.category == Npnsi, Token.length > 2, !Lookup, !Token.orth == allCaps }
+)
+
 Rule: MatchHotelTypeAndName
 Priority: 20  
 (
  ({ Lookup.majorType == hotel_type})
  ( SAINT_DOT | SAINT ) ?
- ({ Token.category == Npfsi} | { Token.category == Npmsi} | { Token.category == Npnsi}) [1,5]
+ ( NAME ) [1,3]
 )
 :match
 -->

@@ -45,7 +45,7 @@ Priority: 21
  ({ Lookup.majorType == hotel_type })
  ( SAINT | SAINT_DOT) ?
  ( NAME ) [1,4]
- ( IN ) ? 
+ ( IN ) 
  ( CITY | CITY_DOT ) ? 
  ({ Lookup.majorType == geo })
 )

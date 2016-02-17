@@ -4,9 +4,9 @@ Options: control = appelt
 
 Macro: NAME
 (
-	{ Token.category == Npfsi, !Lookup.majorType == geo} | 
-	{ Token.category == Npmsi, !Lookup.majorType == geo } | 
-	{ Token.category == Npnsi, !Lookup.majorType == geo }
+	{ Token.category == Npfsi, Token.length > 2, !Lookup, !Token.orth == allCaps} | 
+	{ Token.category == Npmsi, Token.length > 2, !Lookup, !Token.orth == allCaps } | 
+	{ Token.category == Npnsi, Token.length > 2, !Lookup, !Token.orth == allCaps }
 )
 
 Macro: IN
@@ -40,7 +40,7 @@ Macro: SAINT_DOT
 )
  
 Rule: MatchHotelAndPlace
-Priority: 21
+Priority: 20
 (
  ({ Lookup.majorType == hotel_type }) ?
  ( SAINT | SAINT_DOT) ?

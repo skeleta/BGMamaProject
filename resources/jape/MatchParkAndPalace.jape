@@ -1,11 +1,12 @@
 Phase: HotelNames
-Input: Token 
-Options: control = appelt
+Input: Token Lookup
+Options: control = once
 
 Macro: PARK_OR_PALACE  
 (
  { Token.string == "парк" } | { Token.string == "Парк" } | 
- { Token.string == "палас" } | { Token.string == "Палас"}
+ { Token.string == "палас" } | { Token.string == "Палас"} |
+ { Token.string == "спа" } | { Token.string == "Спа" }
 )  
 
 Macro: NAME 
@@ -14,10 +15,17 @@ Macro: NAME
  { Token.category == Npfsi, Token.length > 2 } | 
  { Token.category == Npnsi, Token.length > 2 }
 )
+Macro: NAME_WITHOUT_LOOKUP 
+(
+ { Token.category == Npmsi, Token.length > 2, !Lookup } | 
+ { Token.category == Npfsi, Token.length > 2, !Lookup} | 
+ { Token.category == Npnsi, Token.length > 2, !Lookup }
+)
  
 Rule: MatchParkAndPalace
 (
-( NAME ) [1,4]
+( NAME ) 
+( NAME_WITHOUT_LOOKUP ) [1,4]
 ( PARK_OR_PALACE )
 )
 :match
