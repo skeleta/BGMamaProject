@@ -17,7 +17,7 @@ import gate.util.persistence.PersistenceManager;
 public class LoadGApp {
 	private static final String BGMAMMAPROJECT_PATH = "D:/FMI_Projects/BGMamaProject";
 	private static final String GAPP_PATH = BGMAMMAPROJECT_PATH + "/resources/app/LocationSearch.gapp";
-	private static final String DOC_PATH = BGMAMMAPROJECT_PATH + "/resources/documents/unknown_data_400.xml";
+	private static final String DOC_PATH = BGMAMMAPROJECT_PATH + "/resources/documents/unknown_data_3100.xml";
 	private static final String TEST_DOC_PATH = BGMAMMAPROJECT_PATH + "/resources/documents/test_f1.xml";
 	private static final String CORPUS_NAME = "HotelsFinder Corpus";
 	private static final String UTF_8 = "utf-8";
