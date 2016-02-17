@@ -1,6 +1,6 @@
 Phase: HotelNames
 Input: Token Lookup Sentence
-Options: control = once
+Options: control = appelt
 
 Macro: NAME_UPPER_INITIAL
 (

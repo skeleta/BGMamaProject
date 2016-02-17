@@ -1,6 +1,6 @@
 Phase: HotelNames
 Input: Lookup Token
-Options: control = once
+Options: control = appelt
 
 Macro: QUOTES
 (

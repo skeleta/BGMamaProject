@@ -1,6 +1,6 @@
 Phase: HotelNames
 Input: Lookup Token
-Options: control = first
+Options: control = appelt
 
 Rule: MatchHotelTypeAndGeoLocation
 Priority: 20  
