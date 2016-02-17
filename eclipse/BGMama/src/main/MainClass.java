@@ -14,13 +14,13 @@ public class MainClass {
 
 	public static void main(String[] args) {
 
-		// Statistics - Bayes
-		BayesAlgorithm.startTraining();
-		for (Comment comment : DataManager.getTestData()) {
-			comment.setClassifiedType(BayesAlgorithm.classifyComment(comment));
-		}
-		StatisticsManager statisticsManager = new StatisticsManager(DataManager.getTestData());
-		statisticsManager.printStatistics();
+		//		// Statistics - Bayes
+		//		BayesAlgorithm.startTraining();
+		//		for (Comment comment : DataManager.getTestData()) {
+		//			comment.setClassifiedType(BayesAlgorithm.classifyComment(comment));
+		//		}
+		//		StatisticsManager statisticsManager = new StatisticsManager(DataManager.getTestData());
+		//		statisticsManager.printStatistics();
 
 		//Statistics - Hotels
 
@@ -29,10 +29,11 @@ public class MainClass {
 
 		int tp = 0;
 
-		for (Hotel hotel : foundHotels) {
-			for (String string : locations) {
-				if(string.equals(hotel.getName())) {
+		for (String string : locations) {
+			for (Hotel hotel : foundHotels) {
+				if(!hotel.isFound() && string.equals(hotel.getName())) {
 					tp++;
+					hotel.setFound(true);
 				}
 			}					
 		}
