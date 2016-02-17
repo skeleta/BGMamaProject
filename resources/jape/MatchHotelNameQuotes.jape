@@ -1,0 +1,28 @@
+Phase: HotelNames
+Input: Lookup Token
+Options: control = appelt
+
+Macro: QUOTES
+(
+	{ Token.string == "\"" }
+)
+
+Macro: NAME
+(
+	{ Token.category == Npmsi, Token.length > 2, !Lookup, !Token.orth == allCaps } |
+	{ Token.category == Npfsi, Token.length > 2, !Lookup, !Token.orth == allCaps } |
+	{ Token.category == Npnsi, Token.length > 2, !Lookup, !Token.orth == allCaps }
+)
+
+Rule: MatchHotelNameQuotes
+Priority: 20  
+(
+ ({ Lookup.majorType == hotel_type}) ?
+ ( QUOTES )
+ (NAME) [1,4]
+ ( QUOTES )
+)
+:match
+-->
+:match.Hotel_Name = { rule = "MatchHotelNameQuotes", matchStr = :match@string }
+

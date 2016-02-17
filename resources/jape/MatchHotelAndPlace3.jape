@@ -2,6 +2,19 @@ Phase: HotelNames
 Input: Token Lookup
 Options: control = appelt
 
+Macro: SAINT
+(
+	{ Token.string == "свети" } | { Token.string == "Свети" } |
+	{ Token.string == "света" } | { Token.string == "Света" } |
+	{ Token.string == "св" } | { Token.string == "Св" }
+)
+
+Macro: SAINT_DOT
+(
+	({ Token.string == "св" } | { Token.string == "Св" })
+	({ Token.string == "." })
+)
+
 Macro: NAME 
 (
 	{ Token.category == Npmsi, Token.length > 2 } | 
@@ -25,30 +38,17 @@ Macro: CITY
 	{ Token.string == "гр"} | { Token.string == "с"} | 
 	{ Token.string == "град"} | { Token.string == "село"}
 )
-
-Macro: SAINT
-(
-	{ Token.string == "свети" } | { Token.string == "Свети" } |
-	{ Token.string == "света" } | { Token.string == "Света" } |
-	{ Token.string == "св" } | { Token.string == "Св" }
-)
-
-Macro: SAINT_DOT
-(
-	({ Token.string == "св" } | { Token.string == "Св" })
-	({ Token.string == "." })
-)
  
-Rule: MatchHotelAndPlace2
-Priority: 21
+Rule: MatchHotelAndPlace3
+Priority: 20
 (
  ({ Lookup.majorType == hotel_type })
- ( SAINT | SAINT_DOT) ?
+ ( SAINT | SAINT_DOT)
  ( NAME ) [1,4]
- ( IN ) 
+ ( IN ) ? 
  ( CITY | CITY_DOT ) ? 
  ({ Lookup.majorType == geo })
 )
 :match
 -->
-:match.Hotel_Name = { rule = "MatchHotelAndPlace2", matchStr = :match@string }
+:match.Hotel_Name = { rule = "MatchHotelAndPlace3", matchStr = :match@string }

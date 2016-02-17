@@ -1,14 +1,52 @@
-﻿Phase: HotelNames
+Phase: HotelNames
 Input: Token Lookup
 Options: control = appelt
+
+Macro: NAME
+(
+	{ Token.category == Npfsi, Token.length > 2, !Lookup.majorType == geo, !Token.orth == allCaps} | 
+	{ Token.category == Npmsi, Token.length > 2, !Lookup.majorType == geo, !Token.orth == allCaps } | 
+	{ Token.category == Npnsi, Token.length > 2, !Lookup.majorType == geo, !Token.orth == allCaps }
+)
+
+Macro: IN
+(
+	{ Token.string == "-" } | { Token.string == "," } | { Token.string == "в"} | { Token.string == "във"}
+)
+
+Macro: CITY_DOT
+(
+	({ Token.string == "гр" } | { Token.string == "с" })
+	({ Token.string == "." })
+)
+
+Macro: CITY
+(
+	{ Token.string == "гр"} | { Token.string == "с"} | 
+	{ Token.string == "град"} | { Token.string == "село"}
+)
+
+Macro: SAINT
+(
+	{ Token.string == "свети" } | { Token.string == "Свети" } |
+	{ Token.string == "света" } | { Token.string == "Света" } |
+	{ Token.string == "св" } | { Token.string == "Св" }
+)
+
+Macro: SAINT_DOT
+(
+	({ Token.string == "св" } | { Token.string == "Св" })
+	({ Token.string == "." })
+)
  
 Rule: MatchHotelAndPlace
-Priority: 21
+Priority: 20
 (
  ({ Lookup.majorType == hotel_type }) ?
- ({ Token.category == Npfsi, !Lookup.majorType == geo} | { Token.category == Npmsi, !Lookup.majorType == geo } ) [1,4]
- ({ Token.string == "-" } | { Token.string == "," } | { Token.string == "в"} | { Token.string == "във"}) ? 
- ({ Token.string == "гр." } | { Token.string == "с." } | { Token.string == "гр"} | { Token.string == "с"} | { Token.string == "град"} | { Token.string == "село"}) ? 
+ ( SAINT | SAINT_DOT) ?
+ ( NAME ) [1,4]
+ ( IN ) ? 
+ ( CITY | CITY_DOT ) ? 
  ({ Lookup.majorType == geo })
 )
 :match
