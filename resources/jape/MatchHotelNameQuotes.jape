@@ -14,7 +14,7 @@ Macro: NAME
 	{ Token.category == Npnsi, Token.length > 2, !Lookup, !Token.orth == allCaps }
 )
 
-Rule: MatchHotelTypeAndName
+Rule: MatchHotelNameQuotes
 Priority: 20  
 (
  ({ Lookup.majorType == hotel_type}) ?
@@ -24,5 +24,5 @@ Priority: 20
 )
 :match
 -->
-:match.Hotel_Name = { rule = "MatchHotelTypeAndName", matchStr = :match@string }
+:match.Hotel_Name = { rule = "MatchHotelNameQuotes", matchStr = :match@string }
 

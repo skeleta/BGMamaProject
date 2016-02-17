@@ -4,9 +4,9 @@ Options: control = appelt
 
 Macro: NAME
 (
-	{ Token.category == Npfsi, Token.length > 2, !Lookup, !Token.orth == allCaps} | 
-	{ Token.category == Npmsi, Token.length > 2, !Lookup, !Token.orth == allCaps } | 
-	{ Token.category == Npnsi, Token.length > 2, !Lookup, !Token.orth == allCaps }
+	{ Token.category == Npfsi, Token.length > 2, !Lookup.majorType == geo, !Token.orth == allCaps} | 
+	{ Token.category == Npmsi, Token.length > 2, !Lookup.majorType == geo, !Token.orth == allCaps } | 
+	{ Token.category == Npnsi, Token.length > 2, !Lookup.majorType == geo, !Token.orth == allCaps }
 )
 
 Macro: IN

@@ -39,8 +39,8 @@ Macro: CITY
 	{ Token.string == "град"} | { Token.string == "село"}
 )
  
-Rule: MatchHotelAndPlace2
-Priority: 21
+Rule: MatchHotelAndPlace3
+Priority: 20
 (
  ({ Lookup.majorType == hotel_type })
  ( SAINT | SAINT_DOT)
@@ -51,4 +51,4 @@ Priority: 21
 )
 :match
 -->
-:match.Hotel_Name = { rule = "MatchHotelAndPlace2", matchStr = :match@string }
+:match.Hotel_Name = { rule = "MatchHotelAndPlace3", matchStr = :match@string }
