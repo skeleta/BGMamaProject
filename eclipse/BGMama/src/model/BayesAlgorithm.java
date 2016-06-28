@@ -8,10 +8,15 @@ public class BayesAlgorithm {
 	private static double negativeProbability = 0;
 	private static double positiveProbability = 0;
 	
-	private static ArrayList<Word> termsDictionary = new ArrayList<>();
+	private ArrayList<Word> termsDictionary = new ArrayList<>();
 	
+	public BayesAlgorithm(ArrayList<Comment> trainingData) {
+		super();
+		startTraining(trainingData);
+	}
+
 	// training
-	public static void startTraining(ArrayList<Comment> trainingData) {
+	public void startTraining(ArrayList<Comment> trainingData) {
 		formTermsDictionary(trainingData);
 		
 		ArrayList<Comment> positiveComments = formDocumentsSet(ClassType.ClassTypePositive, trainingData);
@@ -26,7 +31,7 @@ public class BayesAlgorithm {
 		
 	}
 	
-	private static void formTermsDictionary(ArrayList<Comment> trainingData) {
+	private void formTermsDictionary(ArrayList<Comment> trainingData) {
 		//save all diff words and symbols in the trainingData into termsDictionary with object Word
 		termsDictionary = new ArrayList<>();
 		ArrayList<String> addedStrings = new ArrayList<>();
@@ -46,7 +51,7 @@ public class BayesAlgorithm {
 		}
 	}
 	
-	private static int getWordsCountInComments(ArrayList<Comment> comments) {
+	private int getWordsCountInComments(ArrayList<Comment> comments) {
 		int wordCount = 0;
 		for (Comment comment : comments) {
 			wordCount += comment.getWordCount();
@@ -54,12 +59,12 @@ public class BayesAlgorithm {
 		return wordCount;
 	}
 	
-	private static double calculatePriorProbability(ArrayList<Comment> comments, ArrayList<Comment> trainingData) {		
+	private double calculatePriorProbability(ArrayList<Comment> comments, ArrayList<Comment> trainingData) {		
 		double probabilityType = (double) comments.size() / trainingData.size();
 		return probabilityType;		
 	}
 	
-	private static void calculateWordsProbability(int nPositive, int nNegative){
+	private void calculateWordsProbability(int nPositive, int nNegative){
 		// calculate n - common count of diff positions in textj
 		
 		for (Word word : termsDictionary) {
@@ -71,7 +76,7 @@ public class BayesAlgorithm {
 		}
 	}
 	
-	private static ArrayList<Comment> formDocumentsSet(Comment.ClassType type, ArrayList<Comment> trainingData) {
+	private ArrayList<Comment> formDocumentsSet(Comment.ClassType type, ArrayList<Comment> trainingData) {
 		ArrayList<Comment> documentsSet = new ArrayList<>();
 		for (Comment comment : trainingData) {
 			if (comment.getCommentCategory() == type) {
@@ -81,16 +86,16 @@ public class BayesAlgorithm {
 		return documentsSet;
 	}
 	
-	public static double getNegativeProbability() {
+	public double getNegativeProbability() {
 		return negativeProbability;
 	}
 
-	public static double getPositiveProbability() {
+	public double getPositiveProbability() {
 		return positiveProbability;
 	}
 	
 	// classifying
-	public static ClassType classifyComment(Comment comment) {
+	public ClassType classifyComment(Comment comment) {
 		ArrayList<Word> allMatchingWords = findAllMatchingWords(comment);
 		double wordsPositiveProbability = 0.0; //(P(word|positiveClass)
 		double wordsNegativeProbability = 0.0; //(P(word|negativeClass)
@@ -105,7 +110,7 @@ public class BayesAlgorithm {
 		return mostProbableClass(wordsPositiveProbability, wordsNegativeProbability);		
 	}
 	
-	private static ArrayList<Word> findAllMatchingWords(Comment comment){
+	private ArrayList<Word> findAllMatchingWords(Comment comment){
 		ArrayList<Word> allMatchingWords = new ArrayList<>();
 		for (Word word : comment.getUniqueWords()) {
 			for (Word dictionaryWord : termsDictionary) {
@@ -117,7 +122,7 @@ public class BayesAlgorithm {
 		return allMatchingWords;
 	}
 	
-	private static ClassType mostProbableClass(double positiveProb, double negativeProb) {
+	private ClassType mostProbableClass(double positiveProb, double negativeProb) {
 		ClassType type = ClassType.ClassTypeUnknown;
 		if (positiveProb > negativeProb) {
 			type = ClassType.ClassTypePositive;

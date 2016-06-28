@@ -22,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
 
 import gate.AnnotationSet;
 import gate.util.FeatureBearer;
-import model.BayesAlgorithm;
+import model.AlgorithmManager;
 import model.Comment;
 import model.Comment.ClassType;
 import model.DataManager;
@@ -140,7 +140,7 @@ public class LocationsTableView extends JFrame {
 	private void addCommentsRowsData(DefaultTableModel dataModel){
 		commentsDataSource = DataManager.getUnknownData();
 		for (Comment comment : commentsDataSource) {
-			ClassType classifiedType = BayesAlgorithm.classifyComment(comment);
+			ClassType classifiedType = AlgorithmManager.getBgBayesAlgorithm().classifyComment(comment);
 			System.out.println("Comment type: " + classifiedType);
 			comment.setClassifiedType(classifiedType);
 			ClassType type = comment.getClassifiedType();

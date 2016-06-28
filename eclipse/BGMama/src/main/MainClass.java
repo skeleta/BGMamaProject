@@ -2,6 +2,7 @@ package main;
 
 import java.util.ArrayList;
 
+import model.AlgorithmManager;
 import model.BayesAlgorithm;
 import model.Comment;
 import model.DataManager;
@@ -14,11 +15,11 @@ public class MainClass {
 	public static void main(String[] args) {
 
 		// // Statistics - Bayes
-		BayesAlgorithm.startTraining(DataManager.getTrainingData());
-		for (Comment comment : DataManager.getTestData()) {
-			comment.setClassifiedType(BayesAlgorithm.classifyComment(comment));
+		BayesAlgorithm bayesAlgBg = AlgorithmManager.getBgBayesAlgorithm();
+		for (Comment comment : DataManager.getTestData(DataManager.bgTestDataFilePath)) {
+			comment.setClassifiedType(bayesAlgBg.classifyComment(comment));
 		}
-		StatisticsManager statisticsManager = new StatisticsManager(DataManager.getTestData());
+		StatisticsManager statisticsManager = new StatisticsManager(DataManager.getTestData(DataManager.bgTestDataFilePath));
 		statisticsManager.printStatistics();
 
 		// Statistics - Hotels

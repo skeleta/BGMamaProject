@@ -12,8 +12,8 @@ import model.XMLParser.DataType;
 
 public class DataManager {
 	
-	private static final String trainingDataFilePath = new String("src/Supporting Files/TrainingData.xml");
-	private static final String testDataFilePath = new String("src/Supporting Files//TestData.xml");
+	public static final String bgTrainingDataFilePath = new String("src/Supporting Files/TrainingData.xml");
+	public static final String bgTestDataFilePath = new String("src/Supporting Files//TestData.xml");
 	private static final String unknownDataFilePath = new String("src/Supporting Files/UnknownDataAll.xml");
 	private static final String bgStopWordsFilePath = new String("src/Supporting Files/bulgarianST.txt");
 	private static final String testCommentHotelsPath = new String("src/Supporting Files/hotels_in_test.txt");
@@ -25,16 +25,16 @@ public class DataManager {
 	private static ArrayList<String> bgStopWords = null;
 	private static ArrayList<String> testCommentHotels = null;
 	
-	public static ArrayList<Comment> getTrainingData() {
+	public static ArrayList<Comment> getTrainingData(String trainingDataFilePath) {
 		if (trainingData == null) {
-			loadTrainingData();
+			loadTrainingData(trainingDataFilePath);
 		}
 		return trainingData;
 	}
 	
-	public static ArrayList<Comment> getTestData() {
+	public static ArrayList<Comment> getTestData(String testDataPath) {
 		if(testData == null){
-			loadTestData();
+			loadTestData(testDataPath);
 		}
 		return testData;
 	}
@@ -76,14 +76,14 @@ public class DataManager {
 		DataManager.unknownData = unknownData;
 	}
 	
-	public static void loadTrainingData() {
+	public static void loadTrainingData(String trainingDataFilePath) {
 		setTrainingData(new ArrayList<Comment>());
 		XMLParser.parseFile(trainingDataFilePath, DataType.DataTypeTraining);
 	}
 	
-	public static void loadTestData() {
+	public static void loadTestData(String testDataPath) {
 		setTestData(new ArrayList<Comment>());
-		XMLParser.parseFile(testDataFilePath, DataType.DataTypeTest);
+		XMLParser.parseFile(testDataPath, DataType.DataTypeTest);
 	}
 	
 	public static void loadUnknownData() {
@@ -124,12 +124,12 @@ public class DataManager {
 		return n;
 	}
 	
-	public static void printTrainingData() {
-		printData(getTrainingData());
+	public static void printTrainingData(String trainingDataFilePath) {
+		printData(getTrainingData(trainingDataFilePath));
 	}
 	
-	public static void printTestData() {
-		printData(getTestData());
+	public static void printTestData(String testDataPath) {
+		printData(getTestData(testDataPath));
 	}
 	
 	public static void printUnknownData () {

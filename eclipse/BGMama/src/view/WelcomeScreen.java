@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import model.AlgorithmManager;
 import model.BayesAlgorithm;
 import model.Comment;
 import model.DataManager;
@@ -96,7 +97,7 @@ public class WelcomeScreen extends JFrame {
 
 	private void openLocationsTableView(TableViewType type) {
 		if (type == TableViewType.TableViewTypeCategorizeComments) {
-			BayesAlgorithm.startTraining(DataManager.getTrainingData());
+			AlgorithmManager.getBgBayesAlgorithm();
 		} else if (type == TableViewType.TableViewTypeFindHotels) {
 
 		}
