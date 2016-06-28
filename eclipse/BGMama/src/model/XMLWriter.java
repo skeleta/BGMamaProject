@@ -24,7 +24,7 @@ public class XMLWriter {
 	private static DOMSource source;
 	private static StreamResult result;
 
-	public static void createFile(String name) {
+	public static void createFile(String name, String rootElementName) {
 		DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = null;
 
@@ -33,7 +33,7 @@ public class XMLWriter {
 			// root elements
 			openDocument = docBuilder.newDocument();
 
-			rootElement = openDocument.createElement("unknown_data");
+			rootElement = openDocument.createElement(rootElementName);
 			openDocument.appendChild(rootElement);
 
 			// write the content into xml file
@@ -67,6 +67,24 @@ public class XMLWriter {
 			
 			Element subject = openDocument.createElement("topic");
 			subject.appendChild(openDocument.createTextNode(obj.msgcontent.msg.getMsgsubject()));
+			comment.appendChild(subject);
+		} catch (DOMException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static void writeObjectInfoFile(ENReviews obj) {
+		try {
+			Element comment = openDocument.createElement("comment");
+			rootElement.appendChild(comment);
+			
+			comment.setAttribute("id", obj.ReviewID);
+			comment.setAttribute("category", Comment.className(obj.Ratings.ratingType()));
+			comment.appendChild(openDocument.createTextNode(obj.Content));
+			
+			Element subject = openDocument.createElement("topic");
+			subject.appendChild(openDocument.createTextNode("none"));
 			comment.appendChild(subject);
 		} catch (DOMException e) {
 			// TODO Auto-generated catch block
