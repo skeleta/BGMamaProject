@@ -1,6 +1,5 @@
 package model;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import model.Comment.ClassType;
@@ -12,8 +11,7 @@ public class BayesAlgorithm {
 	private static ArrayList<Word> termsDictionary = new ArrayList<>();
 	
 	// training
-	public static void startTraining() {
-		ArrayList<Comment> trainingData = DataManager.getTrainingData();
+	public static void startTraining(ArrayList<Comment> trainingData) {
 		formTermsDictionary(trainingData);
 		
 		ArrayList<Comment> positiveComments = formDocumentsSet(ClassType.ClassTypePositive, trainingData);

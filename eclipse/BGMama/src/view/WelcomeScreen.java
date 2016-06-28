@@ -59,18 +59,18 @@ public class WelcomeScreen extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		
+
 		JLabel welcomeLabel = new JLabel("\u0414\u043E\u0431\u0440\u0435 \u0434\u043E\u0448\u043B\u0438!");
 		welcomeLabel.setForeground(new Color(0, 0, 128));
 		welcomeLabel.setBackground(SystemColor.activeCaption);
 		welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		welcomeLabel.setFont(new Font("Calibri", Font.BOLD, 50));
 		contentPane.add(welcomeLabel);
-		
+
 		JButton categorizeCommentsButton = new JButton("Категоризирай коментари");
 		categorizeCommentsButton.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mousePressed(MouseEvent arg0) {				
+			public void mousePressed(MouseEvent arg0) {
 				openLocationsTableView(TableViewType.TableViewTypeCategorizeComments);
 			}
 		});
@@ -79,11 +79,11 @@ public class WelcomeScreen extends JFrame {
 		categorizeCommentsButton.setBackground(Color.LIGHT_GRAY);
 		categorizeCommentsButton.setVerticalAlignment(SwingConstants.BOTTOM);
 		contentPane.add(categorizeCommentsButton);
-		
+
 		JButton findHotelsButton = new JButton("Намери хотели");
 		findHotelsButton.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mousePressed(MouseEvent arg0) {				
+			public void mousePressed(MouseEvent arg0) {
 				openLocationsTableView(TableViewType.TableViewTypeFindHotels);
 			}
 		});
@@ -93,12 +93,12 @@ public class WelcomeScreen extends JFrame {
 		findHotelsButton.setBackground(Color.LIGHT_GRAY);
 		contentPane.add(findHotelsButton);
 	}
-	
+
 	private void openLocationsTableView(TableViewType type) {
-		if(type == TableViewType.TableViewTypeCategorizeComments) {
-			BayesAlgorithm.startTraining();
+		if (type == TableViewType.TableViewTypeCategorizeComments) {
+			BayesAlgorithm.startTraining(DataManager.getTrainingData());
 		} else if (type == TableViewType.TableViewTypeFindHotels) {
-			
+
 		}
 		LocationsTableView tableViewWindow = new LocationsTableView(type);
 		tableViewWindow.setDefaultCloseOperation(LocationsTableView.EXIT_ON_CLOSE);
