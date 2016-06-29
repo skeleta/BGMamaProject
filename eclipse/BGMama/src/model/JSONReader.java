@@ -22,15 +22,16 @@ public class JSONReader {
 			File[] listOfFiles = folder.listFiles();
 
 			int br = 0;
-			for (int i = 0; i <= 10; i++) {
+			
+			XMLWriter.createFile("en_train_data_" + br, "training_set");
+			for (int i = 0; i <= 20; i++) {
 				File file = listOfFiles[i];
 				JsonReader reader = new JsonReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
 				Gson gson = new GsonBuilder().create();
 
 				// Read file in stream mode
-				reader.beginArray();
 				System.out.println("Searching..." + file.getAbsolutePath());
-				XMLWriter.createFile("en_train_data_" + br, "training_set");
+				reader.beginArray();
 				while (reader.hasNext()) {
 
 					// Read data into object model

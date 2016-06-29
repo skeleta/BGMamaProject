@@ -7,7 +7,7 @@ public class ENRatings {
 	
 	public ClassType ratingType(){
 		float overallInt = Float.parseFloat(Overall);
-		if (overallInt >= 3f ){
+		if (overallInt > 3f ){
 			return ClassType.ClassTypePositive;
 		} else {
 			return ClassType.ClassTypeNegative;
