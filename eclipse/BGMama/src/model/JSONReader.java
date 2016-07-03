@@ -16,6 +16,7 @@ import com.google.gson.stream.JsonWriter;
 import model.Comment.ClassType;
 
 public class JSONReader {
+	
 	public static void readEnStream() {
 		try {
 			File folder = new File("E:/Projects/TripAdvisorJson");
@@ -24,8 +25,9 @@ public class JSONReader {
 			int br = 0;
 			
 			XMLWriter.createFile("en_train_data_" + br, "training_set");
-			for (int i = 0; i <= 20; i++) {
+			for (int i = 0; i <= 30; i++) {
 				File file = listOfFiles[i];
+				System.out.println(file);
 				JsonReader reader = new JsonReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
 				Gson gson = new GsonBuilder().create();
 

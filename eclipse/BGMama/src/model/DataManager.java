@@ -13,7 +13,7 @@ import model.XMLParser.DataType;
 public class DataManager {
 
 	public static final String bgTrainingDataFilePath = new String("src/Supporting Files/TrainingData.xml");
-	public static final String enTrainingDataFilePath = new String("src/Supporting Files/TrainingDataEN.xml");
+	public static final String enTrainingDataFilePath = new String("src/Supporting Files/TrainingDataEN_4.xml");
 
 	public static final String bgTestDataFilePath = new String("src/Supporting Files//TestData.xml");
 	public static final String translatedTestDataFilePath = new String("src/Supporting Files//TestDataENTranslated.xml");

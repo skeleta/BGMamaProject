@@ -23,7 +23,8 @@ public class XMLWriter {
 	private static Transformer transformer;
 	private static DOMSource source;
 	private static StreamResult result;
-
+//	static int pos = 0;
+//	static int neg = 0;
 	public static void createFile(String name, String rootElementName) {
 		DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = null;
@@ -76,11 +77,22 @@ public class XMLWriter {
 	
 	public static void writeObjectInfoFile(ENReviews obj) {
 		try {
+			String category = Comment.className(obj.Ratings.ratingType());
+//			if (category == "negative"){
+//				if((neg - pos) > 100) return;
+//				neg++;
+//			} 
+//			
+//			if (category == "positive"){
+//				if((pos - neg) > 100) return;
+//				pos++;
+//			}
+			
 			Element comment = openDocument.createElement("comment");
 			rootElement.appendChild(comment);
 			
 			comment.setAttribute("id", obj.ReviewID);
-			comment.setAttribute("category", Comment.className(obj.Ratings.ratingType()));
+			comment.setAttribute("category", category);
 			comment.appendChild(openDocument.createTextNode(obj.Content));
 			
 			Element subject = openDocument.createElement("topic");
