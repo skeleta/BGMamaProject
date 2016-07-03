@@ -140,7 +140,7 @@ public class LocationsTableView extends JFrame {
 	private void addCommentsRowsData(DefaultTableModel dataModel){
 		commentsDataSource = DataManager.getUnknownData();
 		for (Comment comment : commentsDataSource) {
-			ClassType classifiedType = AlgorithmManager.getBgBayesAlgorithm().classifyComment(comment);
+			ClassType classifiedType = AlgorithmManager.getBgBayesAlgorithm().classifyComment(comment).getClassType();
 			System.out.println("Comment type: " + classifiedType);
 			comment.setClassifiedType(classifiedType);
 			ClassType type = comment.getClassifiedType();

@@ -23,6 +23,7 @@ public class DataManager {
 	private static final String testCommentHotelsPath = new String("src/Supporting Files/hotels_in_test.txt");
 
 	private static ArrayList<Comment> trainingData = null;
+	private static ArrayList<Comment> translateTrainingData = null;
 	private static ArrayList<Comment> testData = null;
 	private static ArrayList<Comment> translatedTestData = null;
 	private static ArrayList<Comment> unknownData = null;
@@ -34,18 +35,37 @@ public class DataManager {
 		DataLanguageOrigin, DataLanguageTranslated
 	}
 
-	public static ArrayList<Comment> getTrainingData(String trainingDataFilePath) {
+	public static ArrayList<Comment> getTrainingData(String trainingDataFilePath, String language) {
 		if (trainingData == null) {
-			loadTrainingData(trainingDataFilePath);
+			loadTrainingData(trainingDataFilePath, language);
 		}
 		return trainingData;
 	}
 
-	public static ArrayList<Comment> getTestData(String testDataPath) {
+	public static ArrayList<Comment> getTestData(String testDataPath, String language) {
 		if (testData == null) {
-			loadTestData(testDataPath);
+			loadTestData(testDataPath, language);
 		}
 		return testData;
+	}
+	
+	public static ArrayList<Comment> getTranslateTrainingData(String translateTrainingPath, String language) {
+		if (translateTrainingData == null){
+			loadTranslatedTrainingData(translateTrainingPath, language);
+		}
+		return translateTrainingData;
+	}
+
+	public static void setTranslateTrainingData(ArrayList<Comment> translateTrainingData) {
+		DataManager.translateTrainingData = translateTrainingData;
+	}
+
+	public static void restoreData(){
+		setTestData(null);
+		setTrainingData(null);
+		setTrainingData(null);
+		setUnknownData(null);
+		setTranslateTrainingData(null);
 	}
 
 	public static ArrayList<Comment> getUnknownData() {
@@ -71,9 +91,9 @@ public class DataManager {
 		return testCommentHotels;
 	}
 
-	public static ArrayList<Comment> getTranslatedTestData(String translatedDataFilePath) {
+	public static ArrayList<Comment> getTranslatedTestData(String translatedDataFilePath, String language) {
 		if (translatedTestData == null) {
-			loadTranslatedTestData(translatedDataFilePath);
+			loadTranslatedTestData(translatedDataFilePath, language);
 		}
 		return translatedTestData;
 	}
@@ -103,40 +123,48 @@ public class DataManager {
 		DataManager.translatedTestData = translatedTestData;
 	}
 
-	public static void loadTrainingData(String trainingDataFilePath) {
+	public static void loadTrainingData(String trainingDataFilePath, String language) {
 		setTrainingData(new ArrayList<Comment>());
-		setTrainingData(XMLParser.parseFile(trainingDataFilePath));
+		setTrainingData(XMLParser.parseFile(trainingDataFilePath, language));
+	}
+	
+	public static void loadTranslatedTrainingData(String trainingDataFilePath, String language){
+		setTranslateTrainingData(new ArrayList<Comment>());
+		setTranslateTrainingData(XMLParser.parseFile(trainingDataFilePath, language));
 	}
 
-	public static void loadTestData(String testDataPath) {
+	public static void loadTestData(String testDataPath, String language) {
 		setTestData(new ArrayList<Comment>());
-		setTestData(XMLParser.parseFile(testDataPath));
+		setTestData(XMLParser.parseFile(testDataPath, language));
 	}
 
-	public static void loadTranslatedTestData(String translatedTestDataPath) {
+	public static void loadTranslatedTestData(String translatedTestDataPath, String language) {
 		setTranslatedTestData(new ArrayList<Comment>());
-		setTranslatedTestData(XMLParser.parseFile(translatedTestDataPath));
+		setTranslatedTestData(XMLParser.parseFile(translatedTestDataPath, language));
 	}
 
 	public static void loadUnknownData() {
 		setUnknownData(new ArrayList<Comment>());
-		setUnknownData(XMLParser.parseFile(unknownDataFilePath));
+		setUnknownData(XMLParser.parseFile(unknownDataFilePath, Comment.BG));
 	}
 
-	public static int trueGuessedClassesInTestDataCount(ClassType type) {
+	public static int trueGuessedClassesInTestDataCount(ClassType type, ArrayList<Comment> data) {
 		int n = 0;
-		for (Comment comment : testData) {
+		if (type == ClassType.ClassTypeNegative) {
+			System.out.println("a");
+		}
+		for (Comment comment : data) {
 			if (comment.getCommentCategory() == type && comment.getCommentCategory() == comment.getClassifiedType()) {
-				// System.out.println("\n" + comment.toString());
+//				 System.out.println("\n" + comment.toString());
 				n++;
 			}
 		}
 		return n;
 	}
 
-	public static int falseGuessedClassesInTestDataCount(ClassType type) {
+	public static int falseGuessedClassesInTestDataCount(ClassType type, ArrayList<Comment> data) {
 		int n = 0;
-		for (Comment comment : testData) {
+		for (Comment comment : data) {
 			if (comment.getClassifiedType() == type && comment.getCommentCategory() != comment.getClassifiedType()) {
 				// System.out.println("\n" + comment.toString());
 				n++;
@@ -145,9 +173,9 @@ public class DataManager {
 		return n;
 	}
 
-	public static int notSelectedCommentsFromClass(ClassType type) {
+	public static int notSelectedCommentsFromClass(ClassType type, ArrayList<Comment> data) {
 		int n = 0;
-		for (Comment comment : testData) {
+		for (Comment comment : data) {
 			if (comment.getCommentCategory() == type && comment.getCommentCategory() != comment.getClassifiedType()) {
 				// System.out.println("\n" + comment.toString());
 				n++;
@@ -156,13 +184,13 @@ public class DataManager {
 		return n;
 	}
 
-	public static void printTrainingData(String trainingDataFilePath) {
-		printData(getTrainingData(trainingDataFilePath));
-	}
-
-	public static void printTestData(String testDataPath) {
-		printData(getTestData(testDataPath));
-	}
+//	public static void printTrainingData(String trainingDataFilePath) {
+//		printData(getTrainingData(trainingDataFilePath, Comment.BG));
+//	}
+//
+//	public static void printTestData(String testDataPath) {
+//		printData(getTestData(testDataPath, Comment.BG));
+//	}
 
 	public static void printUnknownData() {
 		printData(getUnknownData());

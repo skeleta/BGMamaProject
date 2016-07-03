@@ -35,13 +35,14 @@ public class Translation {
 	public void translateTestData(String from, String sourceFile, String destFile){
 		String rootElement = "test_set";
 		
-		ArrayList<Comment> comments = DataManager.getTestData(sourceFile);
+		ArrayList<Comment> comments = DataManager.getTestData(sourceFile, Comment.EN);
 		XMLWriter.createFile(destFile, rootElement);
 		for(Comment comment:comments){
 			Comment translated = new Comment(
 						comment.getCommentId(), 
 						comment.getCommentCategoryText(), 
-						translate(from, comment.getCommentText())
+						translate(from, comment.getCommentText()),
+						Comment.EN
 					);
 			XMLWriter.writeObjectInfoFile(translated);
 		}

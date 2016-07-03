@@ -17,7 +17,9 @@ import model.Translation;
 public class MainClass {
 
 	public static void main(String[] args) {
-		AlgorithmManager.classifyTestSet(DataManager.bgTestDataFilePath, DataManager.translatedTestDataFilePath, Comment.BG);
+		
+		StatisticsManager.saveStatistics("src/Supporting Files/results.txt");
+		
 		//Translation translateTest = new Translation();
 //		translateTest.translateTestData(Translation.BG,DataManager.bgTestDataFilePath,"TestDataENTranslated");
 //		JSONReader.readEnStream();

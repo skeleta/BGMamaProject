@@ -100,12 +100,12 @@ public class BayesAlgorithm {
 		double wordsPositiveProbability = 0.0; //(P(word|positiveClass)
 		double wordsNegativeProbability = 0.0; //(P(word|negativeClass)
 		for (Word word : allMatchingWords) {
-			wordsPositiveProbability += Math.log(word.getPositiveProbability());
-			wordsNegativeProbability += Math.log(word.getNegativeProbablity());
+			wordsPositiveProbability += (Math.log(word.getPositiveProbability()));
+			wordsNegativeProbability += (Math.log(word.getNegativeProbablity()));
 		}
 		
-		wordsPositiveProbability += Math.log(positiveProbability);
-		wordsNegativeProbability += Math.log(negativeProbability);
+		wordsPositiveProbability += (Math.log(positiveProbability));
+		wordsNegativeProbability += (Math.log(negativeProbability));
 		
 		return mostProbableClass(wordsPositiveProbability, wordsNegativeProbability);		
 	}

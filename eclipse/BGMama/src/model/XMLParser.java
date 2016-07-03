@@ -26,10 +26,10 @@ public class XMLParser {
 		DataTypeUnknown
 	}
 
-	public static ArrayList<Comment> parseFile(String filePath) {
+	public static ArrayList<Comment> parseFile(String filePath, String language) {
 		Document parsedDocument = openFile(filePath);
 		if (parsedDocument!= null){
-			return parseToArraylist(parsedDocument);
+			return parseToArraylist(parsedDocument, language);
 		}
 		return null;
 	}
@@ -63,12 +63,12 @@ public class XMLParser {
 
 	}
 
-	private static ArrayList<Comment> parseToArraylist(Document parsedDocument) {
+	private static ArrayList<Comment> parseToArraylist(Document parsedDocument,String language) {
 		NodeList nodeList = parsedDocument.getElementsByTagName(kDataCommentNode);
 		ArrayList<Comment> array = new ArrayList<>();
 		for (int temp = 0; temp < nodeList.getLength(); temp++) {
 			Node node = (Node) nodeList.item(temp);
-			Comment newComment = createCommentObject(node);
+			Comment newComment = createCommentObject(node, language);
 			if (newComment != null) {
 				array.add(newComment);
 			}			
@@ -77,7 +77,7 @@ public class XMLParser {
 		return array;
 	}
 
-	private static Comment createCommentObject(Node node) {	
+	private static Comment createCommentObject(Node node,String language) {	
 		Comment newComment = null;
 		if (node.getNodeType() == Node.ELEMENT_NODE) {			
 			Element element = (Element) node;
@@ -87,7 +87,7 @@ public class XMLParser {
 			if (commentText != null ) {
 				String commentId = element.getAttribute(kDataIdAttribute);
 				String commentCategory =  element.getAttribute(kDataCategoryAttribute);
-				newComment = new Comment(commentId, commentCategory, commentText);
+				newComment = new Comment(commentId, commentCategory, commentText, language);
 			}	
 		}
 
