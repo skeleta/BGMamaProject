@@ -95,7 +95,7 @@ public class BayesAlgorithm {
 	}
 	
 	// classifying
-	public ClassType classifyComment(Comment comment) {
+	public ClassificationResult classifyComment(Comment comment) {
 		ArrayList<Word> allMatchingWords = findAllMatchingWords(comment);
 		double wordsPositiveProbability = 0.0; //(P(word|positiveClass)
 		double wordsNegativeProbability = 0.0; //(P(word|negativeClass)
@@ -122,19 +122,24 @@ public class BayesAlgorithm {
 		return allMatchingWords;
 	}
 	
-	private ClassType mostProbableClass(double positiveProb, double negativeProb) {
+	private ClassificationResult mostProbableClass(double positiveProb, double negativeProb) {
 		ClassType type = ClassType.ClassTypeUnknown;
+		double maxProbability = 0;
 		if (positiveProb > negativeProb) {
 			type = ClassType.ClassTypePositive;
+			maxProbability = positiveProb;
 		} else if (positiveProb < negativeProb) {
 			type = ClassType.ClassTypeNegative;
+			maxProbability = negativeProb;
 		} else {
 			if (positiveProbability > negativeProbability) {
 				type = ClassType.ClassTypePositive;
+				maxProbability = positiveProb;
 			} else if (positiveProbability < negativeProbability) {
 				type = ClassType.ClassTypeNegative;
+				maxProbability = negativeProb;
 			}
 		}
-		return type;
+		return new ClassificationResult(type, maxProbability);
 	}	
 }

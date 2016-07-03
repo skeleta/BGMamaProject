@@ -19,6 +19,9 @@ public class Comment {
 	public enum ClassType {
 		ClassTypePositive, ClassTypeNegative, ClassTypeUnknown
 	}
+	
+	public static final String BG = "bg";
+	public static final String EN = "en";
 
 	private static final String positiveClass = "positive";
 	private static final String negativeClass = "negative";

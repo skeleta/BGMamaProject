@@ -26,11 +26,12 @@ public class XMLParser {
 		DataTypeUnknown
 	}
 
-	public static void parseFile(String filePath, DataType type) {
+	public static ArrayList<Comment> parseFile(String filePath) {
 		Document parsedDocument = openFile(filePath);
 		if (parsedDocument!= null){
-			saveData(parseToArraylist(parsedDocument), type);
+			return parseToArraylist(parsedDocument);
 		}
+		return null;
 	}
 
 	private static Document openFile(String filePath) {		
@@ -92,22 +93,4 @@ public class XMLParser {
 
 		return newComment;
 	}
-	
-	private static void saveData(ArrayList<Comment> data, DataType type) {
-		switch (type) {
-		case DataTypeTraining:
-			DataManager.setTrainingData(data);
-			break;
-		case DataTypeTest:
-			DataManager.setTestData(data);
-			break;
-		case DataTypeUnknown:
-			DataManager.setUnknownData(data);
-			break;
-		default:
-			break;
-		}
-	}
-
-	
 }

@@ -17,8 +17,9 @@ import model.Translation;
 public class MainClass {
 
 	public static void main(String[] args) {
-		Translation translateTest = new Translation();
-		translateTest.translateTestData("bg","TestData","TestDataEN");
+		AlgorithmManager.classifyTestSet(DataManager.bgTestDataFilePath, DataManager.translatedTestDataFilePath, Comment.BG);
+		//Translation translateTest = new Translation();
+//		translateTest.translateTestData(Translation.BG,DataManager.bgTestDataFilePath,"TestDataENTranslated");
 //		JSONReader.readEnStream();
 		// // Statistics - Bayes
 //		BayesAlgorithm bayesAlgBg = AlgorithmManager.getBgBayesAlgorithm();

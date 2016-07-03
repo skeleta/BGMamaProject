@@ -10,8 +10,6 @@ public class Translation {
 	private static final String SUPPORTING_DIR = USER_DIR + "//src//Supporting Files//";
 	private static final String CLIENT_ID = "BGmamaProject_v2";
 	private static final String CLIENT_SECRET = "IWR5scxH5U90HcK1j/VfpEQeDt7TquobTqY7OdnuT9A=";
-	public static final String BG = "bg";
-	public static final String EN = "en";
 	
 	public Translation(){
 	    //Replace client_id and client_secret with your own.  
@@ -22,7 +20,7 @@ public class Translation {
 	public String translate(String from, String text){
 		String translated = "";
 		try {
-			if (from.equals(EN)) {
+			if (from.equals(Comment.EN)) {
 				translated = Translate.execute(text, Language.ENGLISH, Language.BULGARIAN);
 			} else {
 				translated = Translate.execute(text, Language.BULGARIAN, Language.ENGLISH);
@@ -37,7 +35,7 @@ public class Translation {
 	public void translateTestData(String from, String sourceFile, String destFile){
 		String rootElement = "test_set";
 		
-		ArrayList<Comment> comments = DataManager.getTestData(SUPPORTING_DIR + sourceFile + ".xml");
+		ArrayList<Comment> comments = DataManager.getTestData(sourceFile);
 		XMLWriter.createFile(destFile, rootElement);
 		for(Comment comment:comments){
 			Comment translated = new Comment(
