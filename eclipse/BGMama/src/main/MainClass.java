@@ -2,6 +2,8 @@ package main;
 
 import java.util.ArrayList;
 
+import com.memetix.mst.translate.Translate;
+
 import model.AlgorithmManager;
 import model.BayesAlgorithm;
 import model.Comment;
@@ -10,12 +12,14 @@ import model.Hotel;
 import model.JSONReader;
 import model.LoadGApp;
 import model.StatisticsManager;
+import model.Translation;
 
 public class MainClass {
 
 	public static void main(String[] args) {
-
-		JSONReader.readEnStream();
+		Translation translateTest = new Translation();
+		translateTest.translateTestData("bg","TestData","TestDataEN");
+//		JSONReader.readEnStream();
 		// // Statistics - Bayes
 //		BayesAlgorithm bayesAlgBg = AlgorithmManager.getBgBayesAlgorithm();
 //		for (Comment comment : DataManager.getTestData(DataManager.bgTestDataFilePath)) {

@@ -40,5 +40,10 @@
   		<artifactId>gate-core</artifactId>
   		<version>5.2.1</version>
   	</dependency>
+  	<dependency>
+    	<groupId>com.memetix</groupId>
+    	<artifactId>microsoft-translator-java-api</artifactId>
+    	<version>0.6.2</version>
+	</dependency>
   </dependencies>
 </project>

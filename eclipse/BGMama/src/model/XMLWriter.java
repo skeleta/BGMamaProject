@@ -91,6 +91,21 @@ public class XMLWriter {
 			e.printStackTrace();
 		}
 	}
+	
+	public static void writeObjectInfoFile(Comment obj) {
+		try {
+			Element comment = openDocument.createElement("comment");
+			rootElement.appendChild(comment);
+
+			comment.setAttribute("id", obj.getCommentId());
+			comment.setAttribute("category", obj.getCommentCategoryText());
+			comment.appendChild(openDocument.createTextNode(obj.getCommentText()));
+	
+		} catch (DOMException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	public static void closeFile(){
 
