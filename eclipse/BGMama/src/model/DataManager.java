@@ -13,13 +13,14 @@ import model.XMLParser.DataType;
 public class DataManager {
 
 	public static final String bgTrainingDataFilePath = new String("src/Supporting Files/TrainingData.xml");
-	public static final String enTrainingDataFilePath = new String("src/Supporting Files/TrainingDataEN_4.xml");
+	public static final String enTrainingDataFilePath = new String("src/Supporting Files/TrainingDataEN_1.xml");
 
 	public static final String bgTestDataFilePath = new String("src/Supporting Files//TestData.xml");
 	public static final String translatedTestDataFilePath = new String("src/Supporting Files//TestDataENTranslated.xml");
 
 	private static final String unknownDataFilePath = new String("src/Supporting Files/UnknownDataAll.xml");
 	private static final String bgStopWordsFilePath = new String("src/Supporting Files/bulgarianST.txt");
+	private static final String enStopWordsFilePath = new String("src/Supporting Files/englishST.txt");
 	private static final String testCommentHotelsPath = new String("src/Supporting Files/hotels_in_test.txt");
 
 	private static ArrayList<Comment> trainingData = null;
@@ -29,6 +30,7 @@ public class DataManager {
 	private static ArrayList<Comment> unknownData = null;
 
 	private static ArrayList<String> bgStopWords = null;
+	private static ArrayList<String> enStopWords = null;
 	private static ArrayList<String> testCommentHotels = null;
 
 	public enum DataLanguage {
@@ -81,6 +83,14 @@ public class DataManager {
 			saveData(bgStopWords, bgStopWordsFilePath);
 		}
 		return bgStopWords;
+	}
+
+	public static ArrayList<String> getEnStopWords() {
+		if (enStopWords == null) {
+			enStopWords = new ArrayList<>();
+			saveData(enStopWords, enStopWordsFilePath);
+		}
+		return enStopWords;
 	}
 
 	public static ArrayList<String> getTestCommentHotels() {

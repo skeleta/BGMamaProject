@@ -6,11 +6,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Comment {
-	
+
 	public enum ClassType {
 		ClassTypePositive, ClassTypeNegative, ClassTypeUnknown
 	}
-	
+
 	public static final String BG = "bg";
 	public static final String EN = "en";
 
@@ -154,25 +154,31 @@ public class Comment {
 				addedStrings.add(string);
 			}
 		}
-		
+
 		setUniqueWords(uniqueWords);
 	}
 
 	private ArrayList<String> formArrayFromComment() {
 		// match only bg words with more than 2 letters
 		Pattern pattern = Pattern.compile("[A-Za-z]{2,}");
-		
+
 		if (getLanguage() == BG) {
 			pattern = Pattern.compile("[А-Яа-я]{2,}");
 		}		
-		
+
 		Matcher matcher = pattern.matcher(this.commentText);
 
 		ArrayList<String> textArray = new ArrayList<>();
 		while (matcher.find()) {
 			String match = matcher.group();
-			textArray.add(match);
-//			 System.out.println("Word: " + match);
+			if(getLanguage() == EN){
+				if (!DataManager.getEnStopWords().contains(match)) {
+					textArray.add(match);
+//					System.out.println("Word: " + match);
+				}
+			} else {
+				textArray.add(match);
+			}
 		}
 		wordCount = textArray.size();
 		// HashSet<String> uniqueValues = new HashSet<>(textArray);

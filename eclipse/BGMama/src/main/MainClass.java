@@ -18,7 +18,7 @@ public class MainClass {
 
 	public static void main(String[] args) {
 		
-		StatisticsManager.saveStatistics("src/Supporting Files/results.txt");
+		StatisticsManager.saveStatistics("src/Supporting Files/results_EN_1_whithout_enST.txt");
 		
 		//Translation translateTest = new Translation();
 //		translateTest.translateTestData(Translation.BG,DataManager.bgTestDataFilePath,"TestDataENTranslated");

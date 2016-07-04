@@ -1,0 +1,151 @@
+commentText, realClass, predictedClass, classifier, probability
+
+great hotel, excellent service, rich breakfast
+,positive,ClassTypePositive,ClassificationModelEN,-37.82081538718651
+
+very bad organization of parking.
+,negative,ClassTypeNegative,ClassificationModelEN,-13.64817626888052
+
+The rooms are well furnished and clean.
+The breakfast is good.
+,positive,ClassTypePositive,ClassificationModelEN,-35.430785099319685
+
+There's something that you don't like in this hotel. Since he discovered other hotels in New York have no chance for me
+,positive,ClassTypePositive,ClassificationModelEN,-73.6505308832915
+
+The hotel is incredible-modern design with lots of taste and class. Everything was on the level, including staff. The location is excellent, a jewel in the center of Varna.
+,positive,ClassTypePositive,ClassificationModelEN,-115.55312056925864
+
+You can't expect guests in the hotel, which will not save the money if you have made a booking on it and at the same time there is no place where to stop in front of it and to take the bags. The staff takes their cars not only guests, but also customers of the restaurant and the coffee. Extremely incorrect in this context. Point at the interval of time you arrive, you're honest and you arrive at the said time finally has nowhere to stop!!!
+,negative,ClassTypeNegative,ClassificationModelEN,-185.90459858551148
+
+I don't think anyone would be pleased if his car back osurkana the fault of the person who parked the cars of hotel guests! This is unacceptable.
+,negative,ClassTypeNegative,ClassificationModelEN,-90.59432645250186
+
+Amazing hotel! Designer furnishings, perfect service!
+,positive,ClassTypePositive,ClassificationModelEN,-43.29796372416636
+
+Incredible hotel. Great service thank you! I am happy that You have chosen.
+,positive,ClassTypePositive,ClassificationModelEN,-55.294729764252864
+
+Difficult parking during the day; There is no wi-fi in the rooms, but only at the reception; announced on the Internet price was significantly higher than the declared at the reception; Breakfast is after 9
+,negative,ClassTypeNegative,ClassificationModelEN,-105.61636148576832
+
+I never expected that in a place like this could exist such a place to sleep. Unsupported and dirty.
+,negative,ClassTypeNegative,ClassificationModelEN,-43.883246637198454
+
+In the most expensive room we were: without heating in the bathroom, a small and poor air conditioning that could not otopli the room, only 1 thin blanket of man and terribly hard tiny pillows. The balcony door not closing tightly and came out cold and we were the only guests in! hotel, apparently due to poor conditions. Paid breakfast beginnings, said soil of 8 and nothing was prepared. I hope to soon forget this nightmare, and poor service and cold in this terrible hotel!
+,negative,ClassTypeNegative,ClassificationModelEN,-273.66012283586196
+
+The staff was extremely friendly and helpful.
+,positive,ClassTypePositive,ClassificationModelEN,-27.71900930128388
+
+Poor hygiene, dirty and uninviting. Unprepared-room handing out towels and sheets at reception. A leak from the tank on the bathroom floor, lack of light bulbs for some lamps, broken hangers for towels, dirty Windows, propadaŝ mattress.
+,negative,ClassTypeNegative,ClassificationModelEN,-155.93482198188764
+
+Terrible time there. From the Access Center is not recommended for lower car. Nikkakvi nameplates, but Google navigation it opens smoothly.
+,negative,ClassTypePositive,ClassificationModelEN,-103.97724082447029
+
+Friendly staff that makes you feel at home. Beautiful view, quiet.
+,positive,ClassTypePositive,ClassificationModelEN,-52.14101990448558
+
+The base is old and in need of renovation, there was no water pressure in the shower. Access to the hotel is quite steep and narrow street, but quiet can be reached by car. In front of the hotel there was construction started after working 9.00-8.30 and sleeping was there, but the good news is that the buildings that are being built will not interfere with the view
+,negative,ClassTypeNegative,ClassificationModelEN,-216.08230906075093
+
+Very nice view. The attitude of the owners and their readiness to help find where the hotel is located. The coffee was very good.
+,positive,ClassTypePositive,ClassificationModelEN,-73.55759424483195
+
+I don't have any comments. the staff extremely polite and smiling, in the rooms was clean and maintained! would love to stay again!
+,positive,ClassTypePositive,ClassificationModelEN,-77.8836458371969
+
+The beautiful! It's almost impossible to detect. There is no such street and number.  We found it very difficult. The Internet almost missing.
+,negative,ClassTypePositive,ClassificationModelEN,-89.22989870110735
+
+Good attitude from the staff, we have provided next door for free.
+,positive,ClassTypePositive,ClassificationModelEN,-40.14085830835456
+
+Perfect location, spacious bathroom, comfortable room. Breakfast at the restaurant '' Panorama "provides a great view of the sea and the city.
+,positive,ClassTypePositive,ClassificationModelEN,-92.52082699839414
+
+It would be good to clean not only the rooms but also the terraces, especially the railings. It's nice to have a Chair on the terrace.
+,negative,ClassTypePositive,ClassificationModelEN,-52.320628543337506
+
+Central location-close to attractions, Seaside Park, the Dolphinarium, the children's corner, the Palace of culture and sports, the beach, the seafront promenade. 
+The room and the restaurant offered a wonderful view.
+The room was spacious and comfortable.
+
+,positive,ClassTypePositive,ClassificationModelEN,-160.94645208418828
+
+Televisions do not work well and the tv signal has a lot of quality!
+,negative,ClassTypeNegative,ClassificationModelEN,-48.11808544249424
+
+The Internet is very weak, almost for nothing. The water stopped, but that was due to a failure in the whole of Varna.
+,negative,ClassTypeNegative,ClassificationModelEN,-48.68994811023784
+
+Pozamr″znahme a little while weather room. With this old and small air conditioning Grand comfort room warm up down for 8 hours provided that the temperature outside was above 1-2 degrees inside barely happened about 18 degrees, otherwise everything else was great.
+,negative,ClassTypeNegative,ClassificationModelEN,-154.10459260429965
+
+We feel great when you stay in the hotel "Black Sea" Varna. Three years in a row we've been here for a while and if we have the opportunity will come again. All the good gathered.
+,positive,ClassTypePositive,ClassificationModelEN,-110.20519626468398
+
+I cleaned up the room, the maid Rose, there was a note do not disturb, provided that we put such. Obviously this is number not cleaned. Didn't work air conditioner.
+,negative,ClassTypeNegative,ClassificationModelEN,-93.73887534284935
+
+The comfort of the rooms and the furnishings in any case do not fit the category.
+,negative,ClassTypePositive,ClassificationModelEN,-55.32226643969381
+
+Nelûbeznoto and unprofessional attitude of certain persons
+,negative,ClassTypePositive,ClassificationModelEN,-39.36797053660414
+
+The photos do not correspond to reality. Cheap food, cooked badly. New year's Eve "dinner" with paid separately to alcohol, which is not included in the cover. The apartment lacked a table and chairs. For $ 300 a night sleeping on the wrap around in the living room stool or r″biš of the cheapest possible mattress in the bedroom. Tv with 5 channels. The Spa is dirty and smells like a bus stop. Fitness assessment with 3.5. The lock on the front door you teased me all the time. The kitchen in the apartment is equipped with only 4 cups. For 2 stars is not enough, Camogli 4 star for $ 1800 and 6 nights. On top of that, you take the money. Once you make a reservation via booking. Clearly not a man to change his mind. They said it could not issue a stay because the invoice was paid last year, i.e. a few days ago.
+,negative,ClassTypeNegative,ClassificationModelEN,-551.4024545870349
+
+Lovely hotel with many amenities, delicious food and friendly staff.
+,positive,ClassTypePositive,ClassificationModelEN,-44.10687255505407
+
+All-indoor pool with warm water (temperature 25-26 g and the air thermometer 29gr.), there is also a steam room and sauna in the price, block table of the restaurant, especially for dinner-with a wide variety of dishes and desserts, the rooms are large and clean-everything is new.
+The hotel is located near to the forest trails above Bansko, far away from the melee and overcrowding in the Centre of the resort.
+There are many pleasant Creek hotel, which slightly romoli and creates a real feeling of holiday in the mountains.
+,positive,ClassTypePositive,ClassificationModelEN,-331.5607189290785
+
+
+The kitchen in the apartment is equipped with crockery and cutlery
+,negative,ClassTypePositive,ClassificationModelEN,-41.842179837751544
+
+Ideal for a peaceful family vacation.
+,positive,ClassTypePositive,ClassificationModelEN,-33.93960004180791
+
+The temperature in the pool-27 degrees, but it turned out to be quite low, and in Hall 17 degrees. The rooms are heated by "duhalki" buffet-food is the set menu. The use of the steam bath and sauna after a one-hour advance request. It's not for families with little children.
+Does not meet the four-stars hotel.
+,negative,ClassTypeNegative,ClassificationModelEN,-230.5486119379435
+
+We don't like the Spa reception and masseuse, make inappropriate remarks. And it is complete madness gym and kids ' corner to relax in the spa area. The children's corner had a caption-KEEP QUIET. Which child will be quiet while playing??? And who will the levee rods without knocking?  Move or spa or gym and children's playground. Once again, stupid!!!!!!!
+,negative,ClassTypePositive,ClassificationModelEN,-247.4148726433726
+
+In the day nastanâvahme with our little daughter (1.5 years) in the room was 16 degrees. At the reception they said all rooms are warm with duhalki and that's it. 
+Breakfast is incredibly ugly, but not worse than dinner. In the lobby is cold and almost never staff.
+,negative,ClassTypeNegative,ClassificationModelEN,-146.53920386193494
+
+VERY NICE APARTMENT, WARM AND SPACIOUS
+,positive,ClassTypePositive,ClassificationModelEN,-43.2044267915786
+
+THE FOOD WAS DISGUSTING, THE COOK MAY NEED TO BE REPLACED.
+,negative,ClassTypeNegative,ClassificationModelEN,-82.86990435382017
+
+The relationship in the first place. Even the predstavilata us as the owner Mrs. For her, as well as to the staff of the hotel, except the girls at the reception, categories such as tourism, hospitality and customer satisfaction are absolutely unknown. 
+Guests of the hotel are nothing but "milch cows".
+The food is terrible, poor choice. And that goes for breakfast and dinner.
+Even the children did not want to eat at the restaurant of the hotel.
+The furniture in the rooms is ovehtâlo and broken.
+Shower battery requires a towel and a lot of strength to be able to run the shower. 
+The bathroom door does not close.
+The curtain of the tub hangs like a mattress bag.
+For hot water waiting for exactly two hours, from 15:30 to 17:30. But maybe that saving natural resources. What do they need guests to bathe!
+When you get comfortable, the bathroom was not cleaned from previous guests.
+For illustration: our friends from Istanbul who had prepaid for 10 nights, on the fifth day they left the hotel and left for Vienna.
+We, thank God, we were only for 2 days.
+Even without the money to have the opportunity to stay in Vihren Palace and blah, blah, I would never do that again.
+,negative,ClassTypeNegative,ClassificationModelEN,-667.42707822792
+
+Disgusting service. Terrible food and kusel. I won't go again.
+,negative,ClassTypeNegative,ClassificationModelEN,-38.375924457865324
