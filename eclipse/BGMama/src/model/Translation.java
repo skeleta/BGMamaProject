@@ -17,7 +17,7 @@ public class Translation {
 	    Translate.setClientSecret(CLIENT_SECRET);
 	}
 	
-	public String translate(String from, String text){
+	public String translate(String from, String text) {
 		String translated = "";
 		try {
 			if (from.equals(Comment.EN)) {
@@ -38,6 +38,7 @@ public class Translation {
 		ArrayList<Comment> comments = DataManager.getTestData(sourceFile, Comment.EN);
 		XMLWriter.createFile(destFile, rootElement);
 		for(Comment comment:comments){
+			System.out.println(comment.getCommentId());
 			Comment translated = new Comment(
 						comment.getCommentId(), 
 						comment.getCommentCategoryText(), 
