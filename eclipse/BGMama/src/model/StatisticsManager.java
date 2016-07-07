@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import model.ClassificationResult.ClassificationFinalDecision;
 import model.Comment.ClassType;
 
 public class StatisticsManager {
@@ -56,20 +57,36 @@ public class StatisticsManager {
 		FileWriter fileWriter = null;
 
 		try {
-			
+
 			fileWriter = new FileWriter(fileResultsPath);
+
+			// mixed results
 			AlgorithmManager.classifyTestSet(DataManager.bgTestDataFilePath, DataManager.translatedTestDataFilePath,
-			Comment.BG);
-			
+					Comment.BG, ClassificationFinalDecision.ClassificationFinalDecisionMixResults);
+
 			StatisticsManager statisticsManager = new StatisticsManager(
 					DataManager.getTestData(DataManager.bgTestDataFilePath, Comment.BG));
 
 			fileWriter.append("Results from mixed training \n");
 			fileWriter.append(statisticsManager.getStatistics());
 			fileWriter.append("\n");
-			
+
 			AlgorithmManager.restoreAlgorithms();
 			
+			// mixed results - compute sum of + and - for both and then decide
+//			AlgorithmManager.classifyTestSet(DataManager.bgTestDataFilePath, DataManager.translatedTestDataFilePath,
+//					Comment.BG, ClassificationFinalDecision.ClassificationFinalDecisionSumBothProbabilities);
+//
+//			StatisticsManager statisticsManager2 = new StatisticsManager(
+//					DataManager.getTestData(DataManager.bgTestDataFilePath, Comment.BG));
+//
+//			fileWriter.append("Results from mixed training \n");
+//			fileWriter.append(statisticsManager2.getStatistics());
+//			fileWriter.append("\n");
+//
+//			AlgorithmManager.restoreAlgorithms();
+
+			// classify BG Only
 			AlgorithmManager.classifyTestSetOnlyBg();
 			StatisticsManager statisticsManagerBg = new StatisticsManager(
 					DataManager.getTestData(DataManager.bgTestDataFilePath, Comment.BG));
@@ -79,7 +96,8 @@ public class StatisticsManager {
 			fileWriter.append("\n");
 
 			AlgorithmManager.restoreAlgorithms();
-			
+
+			// classsify EN only
 			AlgorithmManager.classifyTestSetOnlyEn();
 			StatisticsManager statisticsManagerEn = new StatisticsManager(
 					DataManager.getTranslatedTestData(DataManager.translatedTestDataFilePath, Comment.EN));

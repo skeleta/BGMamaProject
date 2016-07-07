@@ -95,7 +95,13 @@ public class BayesAlgorithm {
 	}
 	
 	// classifying
+
 	public ClassificationResult classifyComment(Comment comment) {
+		Probability prob = calculateProbabilities(comment);
+		return mostProbableClass(prob.getPositiveProbability(), prob.getNegativeProbability());		
+	}
+	
+	public Probability calculateProbabilities(Comment comment) {
 		ArrayList<Word> allMatchingWords = findAllMatchingWords(comment);
 		double wordsPositiveProbability = 0.0; //(P(word|positiveClass)
 		double wordsNegativeProbability = 0.0; //(P(word|negativeClass)
@@ -107,7 +113,7 @@ public class BayesAlgorithm {
 		wordsPositiveProbability += (Math.log(positiveProbability));
 		wordsNegativeProbability += (Math.log(negativeProbability));
 		
-		return mostProbableClass(wordsPositiveProbability, wordsNegativeProbability);		
+		return new Probability(wordsPositiveProbability, wordsNegativeProbability);
 	}
 	
 	private ArrayList<Word> findAllMatchingWords(Comment comment){
@@ -140,6 +146,6 @@ public class BayesAlgorithm {
 				maxProbability = negativeProb;
 			}
 		}
-		return new ClassificationResult(type, maxProbability);
+		return new ClassificationResult(type, maxProbability, positiveProb, negativeProb);
 	}	
 }

@@ -3,12 +3,14 @@ package model;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import model.ClassificationResult.ClassificationFinalDecision;
 import model.ClassificationResult.ClassificationResultModel;
 import model.Comment.ClassType;
 
 public class AlgorithmManager {
 
 	private static final String mixedResultsPath = "src/Supporting files/mixedResults.csv";
+	private static final String deciseResultsPath = "src/Supporting files/mixed2Results.csv";
 	private static final String onlyBgResultsPath = "src/Supporting files/onlyBgResults.csv";
 	private static final String onlyEnResultsPath = "src/Supporting files/onlyEnResults.csv";
 
@@ -37,21 +39,22 @@ public class AlgorithmManager {
 		return enBayesAlgorithm;
 	}
 
-	public static void classifyTestSet(String testSetPath, String translateSetPath, String language) {
+	public static void classifyTestSet(String testSetPath, String translateSetPath, String language, ClassificationFinalDecision finalDecision) {
 		FileWriter fileWriter = null;
 
 		try {
-			fileWriter = new FileWriter(mixedResultsPath);
+			String resultsPath = finalDecision == ClassificationFinalDecision.ClassificationFinalDecisionMixResults ? mixedResultsPath : deciseResultsPath;
+			fileWriter = new FileWriter(resultsPath);
 			fileWriter.append("commentText, realClass, predictedClass, classifier, probability");
 			fileWriter.append("\n");
 
 			for (Comment comment : DataManager.getTestData(testSetPath, language)) {
-				ClassificationResult result = classifyComment(comment, language, translateSetPath);
+				ClassificationResult result = classifyComment(comment, language, translateSetPath, finalDecision);
 				comment.setClassifiedType(result.getClassType());
 				comment.setClassificatorModel(result.getClassificatorModelString(result.getModel()));
 				fileWriter.append(comment.getCommentText() + "," + comment.getCommentCategoryText() + ","
 						+ comment.getClassifiedType() + "," + comment.getClassificatorModel() + ","
-						+ result.getProbability());
+						+ result.getFinalProbability());
 				fileWriter.append("\n");
 			}
 			fileWriter.close();
@@ -82,7 +85,7 @@ public class AlgorithmManager {
 						result.getClassificatorModelString(ClassificationResultModel.ClassificationResultModelEN));
 				fileWriter.append(comment.getCommentText() + "," + comment.getCommentCategoryText() + ","
 						+ comment.getClassifiedType() + "," + comment.getClassificatorModel() + ","
-						+ result.getProbability());
+						+ result.getFinalProbability());
 				fileWriter.append("\n");
 			}
 			fileWriter.close();
@@ -112,7 +115,7 @@ public class AlgorithmManager {
 						result.getClassificatorModelString(ClassificationResultModel.ClassificationResultModelBG));
 				fileWriter.append(comment.getCommentText() + "," + comment.getCommentCategoryText() + ","
 						+ comment.getClassifiedType() + "," + comment.getClassificatorModel() + ","
-						+ result.getProbability());
+						+ result.getFinalProbability());
 				fileWriter.append("\n");
 			}
 			fileWriter.close();
@@ -127,7 +130,7 @@ public class AlgorithmManager {
 		}
 	}
 
-	private static ClassificationResult classifyComment(Comment comment, String language, String translateSetPath) {
+	private static ClassificationResult classifyComment(Comment comment, String language, String translateSetPath, ClassificationFinalDecision finalDecision) {
 		ClassificationResult bgResult = null;
 		ClassificationResult enResult = null;
 		Comment translatedComment = null;
@@ -146,7 +149,7 @@ public class AlgorithmManager {
 		enResult.setModel(ClassificationResultModel.ClassificationResultModelEN);
 		bgResult.setModel(ClassificationResultModel.ClassificationResultModelBG);
 
-		ClassificationResult maxResult = bgResult.mostProbableResult(enResult);
+		ClassificationResult maxResult = bgResult.mostProbableResult(enResult, finalDecision);
 		return maxResult;
 	}
 
