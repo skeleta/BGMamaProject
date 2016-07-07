@@ -82,13 +82,15 @@ public class XMLParser {
 		if (node.getNodeType() == Node.ELEMENT_NODE) {			
 			Element element = (Element) node;
 			// if the text content is empty we do not need to parse the other data
-			
+			if(element.getFirstChild() != null){
 			String commentText = element.removeChild(element.getFirstChild()).getTextContent();
 			if (commentText != null ) {
 				String commentId = element.getAttribute(kDataIdAttribute);
 				String commentCategory =  element.getAttribute(kDataCategoryAttribute);
 				newComment = new Comment(commentId, commentCategory, commentText, language);
+				System.out.println(commentId);
 			}	
+			}
 		}
 
 		return newComment;
