@@ -13,15 +13,27 @@ import model.JSONReader;
 import model.LoadGApp;
 import model.StatisticsManager;
 import model.Translation;
+import model.XMLWriter;
 
 public class MainClass {
 
 	public static void main(String[] args) {
 		
-		StatisticsManager.saveStatistics("src/Supporting Files/results_EN_1_whithout_enST.txt");
+//		StatisticsManager.saveStatistics("src/Supporting Files/results_EN_1_whithout_enST.txt");
 		
-		//Translation translateTest = new Translation();
-//		translateTest.translateTestData(Translation.BG,DataManager.bgTestDataFilePath,"TestDataENTranslated");
+//		AlgorithmManager.classifyTestSetOnlyEn();
+		XMLWriter.createFile("translated_calassified_bg_train", "training_set");
+		for (Comment comment : DataManager.getTranslatedTestData(DataManager.translatedTestDataFilePath,
+				Comment.EN)) {
+			Comment commentBg = DataManager.getSingleComment(comment.getCommentId(), DataManager.getTrainingData(DataManager.bgTrainingDataFilePath, Comment.BG));
+			commentBg.setCommentCategoryText(comment.getCommentCategoryText());
+			XMLWriter.writeObjectInfoFile(commentBg);			
+		}
+		XMLWriter.closeFile();
+		
+		
+//		Translation translateTest = new Translation();
+//		translateTest.translateTestData(Comment.BG,"src/Supporting Files//test_data_new.xml","test_data_new_EN_translated");
 //		JSONReader.readEnStream();
 		// // Statistics - Bayes
 //		BayesAlgorithm bayesAlgBg = AlgorithmManager.getBgBayesAlgorithm();

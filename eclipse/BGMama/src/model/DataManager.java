@@ -8,15 +8,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import model.Comment.ClassType;
-import model.XMLParser.DataType;
 
 public class DataManager {
 
-	public static final String bgTrainingDataFilePath = new String("src/Supporting Files/TrainingData.xml");
-	public static final String enTrainingDataFilePath = new String("src/Supporting Files/TrainingDataEN_1.xml");
+	public static final String bgTrainingDataFilePath = new String("src/Supporting Files/UnknownData_train.xml");
+	public static final String enTrainingDataFilePath = new String("src/Supporting Files/TrainingDataEN_4.xml");
+	
+	public static final String translatedTestDataFilePath = "src/Supporting Files/translated_calassified_en_train.xml";
 
 	public static final String bgTestDataFilePath = new String("src/Supporting Files//TestData.xml");
-	public static final String translatedTestDataFilePath = new String("src/Supporting Files//TestDataENTranslated.xml");
+//	public static final String translatedTestDataFilePath = new String("src/Supporting Files//TestDataENTranslated.xml");
 
 	private static final String unknownDataFilePath = new String("src/Supporting Files/UnknownDataAll.xml");
 	private static final String bgStopWordsFilePath = new String("src/Supporting Files/bulgarianST.txt");

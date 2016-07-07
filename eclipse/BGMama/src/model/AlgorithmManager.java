@@ -77,13 +77,14 @@ public class AlgorithmManager {
 			for (Comment comment : DataManager.getTranslatedTestData(DataManager.translatedTestDataFilePath,
 					Comment.EN)) {
 				ClassificationResult result = bayesAlgEn.classifyComment(comment);
-				comment.setClassifiedType(result.getClassType());
+//				comment.setClassifiedType(result.getClassType());
+				comment.setCommentCategoryText(Comment.className(result.getClassType()));
 				comment.setClassificatorModel(
 						result.getClassificatorModelString(ClassificationResultModel.ClassificationResultModelEN));
-				fileWriter.append(comment.getCommentText() + "," + comment.getCommentCategoryText() + ","
-						+ comment.getClassifiedType() + "," + comment.getClassificatorModel() + ","
-						+ result.getProbability());
-				fileWriter.append("\n");
+//				fileWriter.append(comment.getCommentText() + "," + comment.getCommentCategoryText() + ","
+//						+ comment.getClassifiedType() + "," + comment.getClassificatorModel() + ","
+//						+ result.getProbability());
+//				fileWriter.append("\n");
 			}
 			fileWriter.close();
 		} catch (IOException e) {

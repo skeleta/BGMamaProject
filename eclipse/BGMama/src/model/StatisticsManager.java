@@ -80,15 +80,15 @@ public class StatisticsManager {
 
 			AlgorithmManager.restoreAlgorithms();
 			
-			AlgorithmManager.classifyTestSetOnlyEn();
-			StatisticsManager statisticsManagerEn = new StatisticsManager(
-					DataManager.getTranslatedTestData(DataManager.translatedTestDataFilePath, Comment.EN));
-
-			fileWriter.append("Results from en training only \n");
-			fileWriter.append(statisticsManagerEn.getStatistics());
-			fileWriter.append("\n");
-
-			fileWriter.close();
+//			AlgorithmManager.classifyTestSetOnlyEn();
+//			StatisticsManager statisticsManagerEn = new StatisticsManager(
+//					DataManager.getTranslatedTestData(DataManager.translatedTestDataFilePath, Comment.EN));
+//
+//			fileWriter.append("Results from en training only \n");
+//			fileWriter.append(statisticsManagerEn.getStatistics());
+//			fileWriter.append("\n");
+//
+//			fileWriter.close();
 
 			System.out.println("Done");
 		} catch (IOException e) {
