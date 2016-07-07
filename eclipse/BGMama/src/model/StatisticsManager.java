@@ -74,17 +74,17 @@ public class StatisticsManager {
 			AlgorithmManager.restoreAlgorithms();
 			
 			// mixed results - compute sum of + and - for both and then decide
-//			AlgorithmManager.classifyTestSet(DataManager.bgTestDataFilePath, DataManager.translatedTestDataFilePath,
-//					Comment.BG, ClassificationFinalDecision.ClassificationFinalDecisionSumBothProbabilities);
-//
-//			StatisticsManager statisticsManager2 = new StatisticsManager(
-//					DataManager.getTestData(DataManager.bgTestDataFilePath, Comment.BG));
-//
-//			fileWriter.append("Results from mixed training \n");
-//			fileWriter.append(statisticsManager2.getStatistics());
-//			fileWriter.append("\n");
-//
-//			AlgorithmManager.restoreAlgorithms();
+			AlgorithmManager.classifyTestSet(DataManager.bgTestDataFilePath, DataManager.translatedTestDataFilePath,
+					Comment.BG, ClassificationFinalDecision.ClassificationFinalDecisionSumBothProbabilities);
+
+			StatisticsManager statisticsManager2 = new StatisticsManager(
+					DataManager.getTestData(DataManager.bgTestDataFilePath, Comment.BG));
+
+			fileWriter.append("Results from mixed training \n");
+			fileWriter.append(statisticsManager2.getStatistics());
+			fileWriter.append("\n");
+
+			AlgorithmManager.restoreAlgorithms();
 
 			// classify BG Only
 			AlgorithmManager.classifyTestSetOnlyBg();
