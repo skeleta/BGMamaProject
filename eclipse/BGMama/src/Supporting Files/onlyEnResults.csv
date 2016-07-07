@@ -1,136 +1,136 @@
 commentText, realClass, predictedClass, classifier, probability
 
 great hotel, excellent service, rich breakfast
-,positive,ClassTypePositive,ClassificationModelEN,-37.82081538718651
+,positive,ClassTypePositive,ClassificationModelEN,-37.88489539264346
 
 very bad organization of parking.
-,negative,ClassTypeNegative,ClassificationModelEN,-13.64817626888052
+,negative,ClassTypeNegative,ClassificationModelEN,-25.237020825829948
 
 The rooms are well furnished and clean.
 The breakfast is good.
-,positive,ClassTypePositive,ClassificationModelEN,-35.430785099319685
+,positive,ClassTypePositive,ClassificationModelEN,-35.49891434009371
 
 There's something that you don't like in this hotel. Since he discovered other hotels in New York have no chance for me
-,positive,ClassTypePositive,ClassificationModelEN,-73.6505308832915
+,positive,ClassTypePositive,ClassificationModelEN,-73.57598746960186
 
 The hotel is incredible-modern design with lots of taste and class. Everything was on the level, including staff. The location is excellent, a jewel in the center of Varna.
-,positive,ClassTypePositive,ClassificationModelEN,-115.55312056925864
+,positive,ClassTypePositive,ClassificationModelEN,-115.01683855104065
 
 You can't expect guests in the hotel, which will not save the money if you have made a booking on it and at the same time there is no place where to stop in front of it and to take the bags. The staff takes their cars not only guests, but also customers of the restaurant and the coffee. Extremely incorrect in this context. Point at the interval of time you arrive, you're honest and you arrive at the said time finally has nowhere to stop!!!
-,negative,ClassTypeNegative,ClassificationModelEN,-185.90459858551148
+,negative,ClassTypeNegative,ClassificationModelEN,-186.0906922262905
 
 I don't think anyone would be pleased if his car back osurkana the fault of the person who parked the cars of hotel guests! This is unacceptable.
-,negative,ClassTypeNegative,ClassificationModelEN,-90.59432645250186
+,negative,ClassTypeNegative,ClassificationModelEN,-90.9668901327846
 
 Amazing hotel! Designer furnishings, perfect service!
-,positive,ClassTypePositive,ClassificationModelEN,-43.29796372416636
+,positive,ClassTypePositive,ClassificationModelEN,-42.99120315925415
 
 Incredible hotel. Great service thank you! I am happy that You have chosen.
-,positive,ClassTypePositive,ClassificationModelEN,-55.294729764252864
+,positive,ClassTypePositive,ClassificationModelEN,-54.64021608523134
 
 Difficult parking during the day; There is no wi-fi in the rooms, but only at the reception; announced on the Internet price was significantly higher than the declared at the reception; Breakfast is after 9
-,negative,ClassTypeNegative,ClassificationModelEN,-105.61636148576832
+,negative,ClassTypeNegative,ClassificationModelEN,-106.07419638843727
 
 I never expected that in a place like this could exist such a place to sleep. Unsupported and dirty.
-,negative,ClassTypeNegative,ClassificationModelEN,-43.883246637198454
+,negative,ClassTypeNegative,ClassificationModelEN,-44.12519835049138
 
 In the most expensive room we were: without heating in the bathroom, a small and poor air conditioning that could not otopli the room, only 1 thin blanket of man and terribly hard tiny pillows. The balcony door not closing tightly and came out cold and we were the only guests in! hotel, apparently due to poor conditions. Paid breakfast beginnings, said soil of 8 and nothing was prepared. I hope to soon forget this nightmare, and poor service and cold in this terrible hotel!
-,negative,ClassTypeNegative,ClassificationModelEN,-273.66012283586196
+,negative,ClassTypeNegative,ClassificationModelEN,-274.07355808064705
 
 The staff was extremely friendly and helpful.
-,positive,ClassTypePositive,ClassificationModelEN,-27.71900930128388
+,positive,ClassTypePositive,ClassificationModelEN,-27.50317935951039
 
 Poor hygiene, dirty and uninviting. Unprepared-room handing out towels and sheets at reception. A leak from the tank on the bathroom floor, lack of light bulbs for some lamps, broken hangers for towels, dirty Windows, propadaŝ mattress.
-,negative,ClassTypeNegative,ClassificationModelEN,-155.93482198188764
+,negative,ClassTypeNegative,ClassificationModelEN,-156.6110213178797
 
 Terrible time there. From the Access Center is not recommended for lower car. Nikkakvi nameplates, but Google navigation it opens smoothly.
-,negative,ClassTypePositive,ClassificationModelEN,-103.97724082447029
+,negative,ClassTypeNegative,ClassificationModelEN,-104.34201520403113
 
 Friendly staff that makes you feel at home. Beautiful view, quiet.
-,positive,ClassTypePositive,ClassificationModelEN,-52.14101990448558
+,positive,ClassTypePositive,ClassificationModelEN,-51.56321638181667
 
 The base is old and in need of renovation, there was no water pressure in the shower. Access to the hotel is quite steep and narrow street, but quiet can be reached by car. In front of the hotel there was construction started after working 9.00-8.30 and sleeping was there, but the good news is that the buildings that are being built will not interfere with the view
-,negative,ClassTypeNegative,ClassificationModelEN,-216.08230906075093
+,negative,ClassTypeNegative,ClassificationModelEN,-216.70431365111338
 
 Very nice view. The attitude of the owners and their readiness to help find where the hotel is located. The coffee was very good.
-,positive,ClassTypePositive,ClassificationModelEN,-73.55759424483195
+,positive,ClassTypePositive,ClassificationModelEN,-73.25047943540149
 
 I don't have any comments. the staff extremely polite and smiling, in the rooms was clean and maintained! would love to stay again!
-,positive,ClassTypePositive,ClassificationModelEN,-77.8836458371969
+,positive,ClassTypePositive,ClassificationModelEN,-77.95213164970622
 
 The beautiful! It's almost impossible to detect. There is no such street and number.  We found it very difficult. The Internet almost missing.
-,negative,ClassTypePositive,ClassificationModelEN,-89.22989870110735
+,negative,ClassTypePositive,ClassificationModelEN,-88.81824131189468
 
 Good attitude from the staff, we have provided next door for free.
-,positive,ClassTypePositive,ClassificationModelEN,-40.14085830835456
+,positive,ClassTypePositive,ClassificationModelEN,-40.100025230141654
 
 Perfect location, spacious bathroom, comfortable room. Breakfast at the restaurant '' Panorama "provides a great view of the sea and the city.
-,positive,ClassTypePositive,ClassificationModelEN,-92.52082699839414
+,positive,ClassTypePositive,ClassificationModelEN,-92.08157984699376
 
 It would be good to clean not only the rooms but also the terraces, especially the railings. It's nice to have a Chair on the terrace.
-,negative,ClassTypePositive,ClassificationModelEN,-52.320628543337506
+,negative,ClassTypePositive,ClassificationModelEN,-51.75538050429243
 
 Central location-close to attractions, Seaside Park, the Dolphinarium, the children's corner, the Palace of culture and sports, the beach, the seafront promenade. 
 The room and the restaurant offered a wonderful view.
 The room was spacious and comfortable.
 
-,positive,ClassTypePositive,ClassificationModelEN,-160.94645208418828
+,positive,ClassTypePositive,ClassificationModelEN,-161.7526705399829
 
 Televisions do not work well and the tv signal has a lot of quality!
-,negative,ClassTypeNegative,ClassificationModelEN,-48.11808544249424
+,negative,ClassTypeNegative,ClassificationModelEN,-48.40097192914172
 
 The Internet is very weak, almost for nothing. The water stopped, but that was due to a failure in the whole of Varna.
-,negative,ClassTypeNegative,ClassificationModelEN,-48.68994811023784
+,negative,ClassTypeNegative,ClassificationModelEN,-48.960099316579026
 
 Pozamr″znahme a little while weather room. With this old and small air conditioning Grand comfort room warm up down for 8 hours provided that the temperature outside was above 1-2 degrees inside barely happened about 18 degrees, otherwise everything else was great.
-,negative,ClassTypeNegative,ClassificationModelEN,-154.10459260429965
+,negative,ClassTypeNegative,ClassificationModelEN,-154.456788493138
 
 We feel great when you stay in the hotel "Black Sea" Varna. Three years in a row we've been here for a while and if we have the opportunity will come again. All the good gathered.
-,positive,ClassTypePositive,ClassificationModelEN,-110.20519626468398
+,positive,ClassTypePositive,ClassificationModelEN,-109.63766977456855
 
 I cleaned up the room, the maid Rose, there was a note do not disturb, provided that we put such. Obviously this is number not cleaned. Didn't work air conditioner.
-,negative,ClassTypeNegative,ClassificationModelEN,-93.73887534284935
+,negative,ClassTypeNegative,ClassificationModelEN,-93.75824509200267
 
 The comfort of the rooms and the furnishings in any case do not fit the category.
-,negative,ClassTypePositive,ClassificationModelEN,-55.32226643969381
+,negative,ClassTypePositive,ClassificationModelEN,-55.16209655778728
 
 Nelûbeznoto and unprofessional attitude of certain persons
-,negative,ClassTypePositive,ClassificationModelEN,-39.36797053660414
+,negative,ClassTypePositive,ClassificationModelEN,-39.81097477955194
 
 The photos do not correspond to reality. Cheap food, cooked badly. New year's Eve "dinner" with paid separately to alcohol, which is not included in the cover. The apartment lacked a table and chairs. For $ 300 a night sleeping on the wrap around in the living room stool or r″biš of the cheapest possible mattress in the bedroom. Tv with 5 channels. The Spa is dirty and smells like a bus stop. Fitness assessment with 3.5. The lock on the front door you teased me all the time. The kitchen in the apartment is equipped with only 4 cups. For 2 stars is not enough, Camogli 4 star for $ 1800 and 6 nights. On top of that, you take the money. Once you make a reservation via booking. Clearly not a man to change his mind. They said it could not issue a stay because the invoice was paid last year, i.e. a few days ago.
-,negative,ClassTypeNegative,ClassificationModelEN,-551.4024545870349
+,negative,ClassTypeNegative,ClassificationModelEN,-552.2490275509743
 
 Lovely hotel with many amenities, delicious food and friendly staff.
-,positive,ClassTypePositive,ClassificationModelEN,-44.10687255505407
+,positive,ClassTypePositive,ClassificationModelEN,-43.564008851601955
 
 All-indoor pool with warm water (temperature 25-26 g and the air thermometer 29gr.), there is also a steam room and sauna in the price, block table of the restaurant, especially for dinner-with a wide variety of dishes and desserts, the rooms are large and clean-everything is new.
 The hotel is located near to the forest trails above Bansko, far away from the melee and overcrowding in the Centre of the resort.
 There are many pleasant Creek hotel, which slightly romoli and creates a real feeling of holiday in the mountains.
-,positive,ClassTypePositive,ClassificationModelEN,-331.5607189290785
+,positive,ClassTypePositive,ClassificationModelEN,-331.4463901720859
 
 
 The kitchen in the apartment is equipped with crockery and cutlery
-,negative,ClassTypePositive,ClassificationModelEN,-41.842179837751544
+,negative,ClassTypePositive,ClassificationModelEN,-41.94528629969068
 
 Ideal for a peaceful family vacation.
-,positive,ClassTypePositive,ClassificationModelEN,-33.93960004180791
+,positive,ClassTypePositive,ClassificationModelEN,-33.779958886125165
 
 The temperature in the pool-27 degrees, but it turned out to be quite low, and in Hall 17 degrees. The rooms are heated by "duhalki" buffet-food is the set menu. The use of the steam bath and sauna after a one-hour advance request. It's not for families with little children.
 Does not meet the four-stars hotel.
-,negative,ClassTypeNegative,ClassificationModelEN,-230.5486119379435
+,negative,ClassTypeNegative,ClassificationModelEN,-231.19793919911757
 
 We don't like the Spa reception and masseuse, make inappropriate remarks. And it is complete madness gym and kids ' corner to relax in the spa area. The children's corner had a caption-KEEP QUIET. Which child will be quiet while playing??? And who will the levee rods without knocking?  Move or spa or gym and children's playground. Once again, stupid!!!!!!!
-,negative,ClassTypePositive,ClassificationModelEN,-247.4148726433726
+,negative,ClassTypePositive,ClassificationModelEN,-248.29455254165535
 
 In the day nastanâvahme with our little daughter (1.5 years) in the room was 16 degrees. At the reception they said all rooms are warm with duhalki and that's it. 
 Breakfast is incredibly ugly, but not worse than dinner. In the lobby is cold and almost never staff.
-,negative,ClassTypeNegative,ClassificationModelEN,-146.53920386193494
+,negative,ClassTypeNegative,ClassificationModelEN,-147.00189491548153
 
 VERY NICE APARTMENT, WARM AND SPACIOUS
-,positive,ClassTypePositive,ClassificationModelEN,-43.2044267915786
+,positive,ClassTypePositive,ClassificationModelEN,-42.893682486134416
 
 THE FOOD WAS DISGUSTING, THE COOK MAY NEED TO BE REPLACED.
-,negative,ClassTypeNegative,ClassificationModelEN,-82.86990435382017
+,negative,ClassTypeNegative,ClassificationModelEN,-83.33248722802665
 
 The relationship in the first place. Even the predstavilata us as the owner Mrs. For her, as well as to the staff of the hotel, except the girls at the reception, categories such as tourism, hospitality and customer satisfaction are absolutely unknown. 
 Guests of the hotel are nothing but "milch cows".
@@ -145,7 +145,51 @@ When you get comfortable, the bathroom was not cleaned from previous guests.
 For illustration: our friends from Istanbul who had prepaid for 10 nights, on the fifth day they left the hotel and left for Vienna.
 We, thank God, we were only for 2 days.
 Even without the money to have the opportunity to stay in Vihren Palace and blah, blah, I would never do that again.
-,negative,ClassTypeNegative,ClassificationModelEN,-667.42707822792
+,negative,ClassTypeNegative,ClassificationModelEN,-702.0206375764999
 
 Disgusting service. Terrible food and kusel. I won't go again.
-,negative,ClassTypeNegative,ClassificationModelEN,-38.375924457865324
+,negative,ClassTypeNegative,ClassificationModelEN,-38.63097009886128
+  I saw the restaurant Victoria. Very good looks in the pictures, but the US is far from Lucky. In the hotel's Web site says that there will be free transportation from the hotel to the Centre and back. What is a shuttle, as a type of carriage used to transport them, I didn't even know that offer:) but as you have already written-shuttle service is usually a minibus moving on schedule,positive,ClassTypePositive,ClassificationModelEN,-258.2329611264203
+  To returnees from velingrad-these days the news had a story that there was a mode of water-is it true? And that there was a problem with the water supply and in the hotels:( I was going to save for Christmas, but she had second thoughts.   Also in the news today that there are problems with the water, and that the streets are excavated, right in the Center. Does anyone know how it is at the moment the situation that these prices are not nakačili suggest jumping mud pits and draughts. On tv, he handed out buckets of water in the rooms-large SPA like no water.,negative,ClassTypeNegative,ClassificationModelEN,-326.4232666518447
+Wouldn't last year a water problem? Or with the power it was when there was a lot of snow in winter. I want to go again between holidays, but I don't know what the situation is and from now I don't want to risk it with reservations.,negative,ClassTypeNegative,ClassificationModelEN,-132.99099763206513
+  Wouldn't last year a water problem? Or with the power it was when there was a lot of snow in winter. I want to go again between holidays, but I don't know what the situation is and from now I don't want to risk it with reservations.   There was a problem with the power on March 8, a lot of snow had fallen and had a State of emergency. Then worked with several hotels agregar and again it was possible to rest. But without water, I can't imagine what SPA would be. And I want to book between the holidays, but now had second thoughts frankly.,negative,ClassTypeNegative,ClassificationModelEN,-285.42673019716125
+  Quite fresh impressions of the aura from last weekend. Last time I visited it the summer of 2010. The rooms, the bathrooms and the restaurant have been renovated, which is great, but the pools are slightly neglected. The water is clean and very warm, but here there are otk″rteni tiles on the bottom and sides. The polar bears are slightly blackened in places, cold water of nozzles in attraction trail are clogged and not working properly. The children's pool is fully opened, which for some parents is uncomfortable (I personally think it is better to strengthen one's children in such pools). The outdoor Jacuzzi with hot water and is open all year round. These baskets around the indoor pool are just two, and are sorely inadequate. The whole hotel was very warm, the water in the bathrooms is a mineral. Recommendation-walk in the days from Sunday to Thursday, is much more peaceful.  If anyone is interested in something in particular to ask.    I've been in this hotel and I liked it, my impressions are like yours, I visited him in March this year. But when we left, I found that there's another indoor pool, we noticed, I think, where the steam bath and the sauna-one floor below the reception. I was wrong and there really has another indoor pool? ,positive,ClassTypeNegative,ClassificationModelEN,-640.5668563375649
+In all the major hotels and water has not stopped at all, excavations are to Kamenica and there's a water mode.,positive,ClassTypeNegative,ClassificationModelEN,-48.26041519059949
+  To returnees from velingrad-these days the news had a story that there was a water mode Such things to learn when booking or by reading the advertising materials for the world SPA CAPITAL will not read and that the village was ploughed already do not know how many months. BUT you will learn that the prices are increased and charged dop″lnito for things because if you see any celebration and there are home losers but this is an old maxim While there are idiots and there will be smart,negative,ClassTypeNegative,ClassificationModelEN,-256.11939520026334
+   I've been in this hotel and I liked it, my impressions are like yours, I visited him in March this year. But when we left, I found that there's another indoor pool, we noticed, I think, where the steam bath and the sauna-one floor below the reception. I was wrong and there really has another indoor pool?     Yes, there is a small indoor pool, but I personally don't like it and don't use it, because it is very dark and there's no air. I prefer the hot water in the open. ,positive,ClassTypeNegative,ClassificationModelEN,-245.1664002215926
+After a week we go to Sveti spas, but I decided to look around and in the older themes for him and there is a review by 2012, the pool was dirty and the children's pool there was a rusty radiator. Is that really so? Here's a piece of their mind, whether it is still like this:-the children's playground there are 5 toys, figuratively speaking, and most of them are broken-and had lunch at the restaurant once, and me personally, I didn't like the food-domanitet in my salad were green and with handles, the meatballs uncooked-no outdoor pool, one of the pools is located under something like transparent canopy, I think hygiene around the pools was not of the level-there was a rusty radiators dirt on the floor, etc.-not enough lounge chairs outside. While we were there, there were no more than ten that were employed. Absolutely nonconformity with the capacity of the hotel-the air conditioner in our room didn't work. After we asked the front desk to look at him, a man came and said this is its capacity. We never got to cool down the room for the rest of our stay-the room itself wasn't anything special. It was rather narrow and carpet was very musty. On the balcony there was no dryer-Internet managed to catch or in the lobby or on the balcony. In the room there was definitely. It's not serious in 5 star hotel you want toilet paper from the front desk.  If it's all true, it's better not to go at all.,negative,ClassTypeNegative,ClassificationModelEN,-692.6577890005995
+A month ago, we were in St. Spas. Only bad impression on me did not podsušavaše around the swimming pools. For adults is difficult to walk, what remains for young children. Otherwise, the food and the cleanliness in the room was OK. Children's corner is now moved against the restaurant, there are a few entertaining toys for young children, the bigger draw. ,positive,ClassTypeNegative,ClassificationModelEN,-256.3618425008389
+Well, that it can by 2012 to five times are changed.  Not a bad hotel, the water is warm, the food is good, if it's not crowded and you are with good company will have a great time!,positive,ClassTypeNegative,ClassificationModelEN,-99.4730934443892
+Hi, if there is someone with recent experience with complex Berkut, because there's a theme of 2011, and don't find any recent posts for the same.   I ask the question, because we're going to pay him a visit in the next two weeks and want to know if it's worth it.   Thank You In Advance. ,positive,ClassTypeNegative,ClassificationModelEN,-164.0231126356635
+ Bled, thanks for the theme!      I can not boast low prices on hotels, so I will read more.    ,positive,ClassTypePositive,ClassificationModelEN,-49.835584974077555
+And at the moment is disturbed, the main street and there are problems with the water. -mode., I'm more interested in Chepino and Kamenica. If someone could say I'd appreciate,positive,ClassTypePositive,ClassificationModelEN,-97.33338273710623
+Very interesting suggestions. I already have located at least two hotels for spring break on the small ... We remotely plan:) I saw the topic that recommended k-with the island-basically it, we were fascinated by the food, but the Spa is lamentable, and hard water cool for young children. Outside the playground is near the swimming pool during the cooler months is empty and is quite dangerous for children. In a Word, the price and the stars do not meet the demand.  Another voice for the wild farm in Upper field-truly unique place, especially if you want to be close to nature and the children to be close to animals.  This summer we were in, Devin and Ismena summer SPA hotel is ideal especially for families with children. Green, stylish interior and exterior, with Bulgarian motifs, wonderful children's Center. Good restaurant, especially if you're more patient. This is not however for the winter-no hot Spa affair.  Calista Starozagorski baths Spa is really nice, warm mineral water, good service, nice and clean, gorgeous yard, in a Grove, but not with design-show that is reconstructed Socialist station.  AURA hotel in velingrad is also a favorite among some of the most opulent pools, although the hotel is relatively small. I think I have a doctor who recommended procedures. And for summer and for winter, except it's a little patio, but the Park is nearby. We haven't found the perfect hotel ....,positive,ClassTypePositive,ClassificationModelEN,-766.8750113104687
+The main street is ready and asphalted, in Kamenitsa and chepino is a nightmare! I think the water mode only in Kamenca.,negative,ClassTypePositive,ClassificationModelEN,-61.512496636956
+  The main street is ready and asphalted, in Kamenitsa and chepino is a nightmare! I think the water mode only in Kamenca.   I mean? About Hotel Velina whether arrangements are concerned, I think for there to book, and he may in Kamenica ,negative,ClassTypePositive,ClassificationModelEN,-111.53003515262644
+Velina in Chepino, you'd better call in the hotel, I think this neighborhood have water, but still ask.,positive,ClassTypePositive,ClassificationModelEN,-40.64388621874154
+If someone was soon in Velina, let him write if there is a problem. Info from the hotel will not be very credible. I don't expect you to admit it before you pay. Does it matter that there and in the bathrooms there are mineral water, that is clearly not by conduit powered hotel, or imagining it?,negative,ClassTypeNegative,ClassificationModelEN,-169.30779159776992
+Very nice theme, thanks!  Will watch with interest.,positive,ClassTypePositive,ClassificationModelEN,-47.95431762763879
+Chicks, why the website hotels.com says that works in the following countries. follows a long list, but Bulgaria is gone? Only the language of the site? I booked a room, but I wonder would it be everything OK with your reservation. Sorry for the laiškiâ question, but I have so far only with Booking I had beef.   ,negative,ClassTypeNegative,ClassificationModelEN,-193.94879270342548
+  Chicks, why the website hotels.com says that works in the following countries. follows a long list, but Bulgaria is gone? Only the language of the site? I booked a room, but I wonder would it be everything OK with your reservation. Sorry for the laiškiâ question, but I have so far only with Booking I had beef.        Pink olive don't worry, this is the language of the site you want. If you press it, you will see that there is even a currency Lev. I have dozens of reservations with the site, I've reached the Gold level Rewards and I don't have any problems. On the contrary in this site I take and use some of the largest discounts and bonuses. Only in certain promotions not including Bulgaria, but this is different. Book easy.,positive,ClassTypeNegative,ClassificationModelEN,-431.6519353863065
+    Chicks, why the website hotels.com says that works in the following countries. follows a long list, but Bulgaria is gone? Only the language of the site? I booked a room, but I wonder would it be everything OK with your reservation. Sorry for the laiškiâ question, but I have so far only with Booking I had beef.        Pink olive don't worry, this is the language of the site you want. If you press it, you will see that there is even a currency Lev. I have dozens of reservations with the site, I've reached the Gold level Rewards and I don't have any problems. On the contrary in this site I take and use some of the largest discounts and bonuses. Only in certain promotions not including Bulgaria, but this is different. Book easy.    Thanks for the reply!    I just because of a greater discount is-Yes. Good day.   ,positive,ClassTypeNegative,ClassificationModelEN,-494.7950797463153
+Any recommendations for winter time, with young children (2D and 5 d), possibly ski and not head cut off by the cross. ...,negative,ClassTypePositive,ClassificationModelEN,-99.41213927008188
+But am I the only one who write here?    Now I started travel writing about Bali. 3 parts are ready. But there will be more. In the third part I describe my trip to the island of Java and Borobodur temples of Prambanan and unique. I hope you find interesting.     http://diana-cacaotours.blogspot.bg/ ,positive,ClassTypePositive,ClassificationModelEN,-140.2607926595237
+Diana, you write Great D travel notes    ,positive,ClassTypePositive,ClassificationModelEN,-32.95788429404078
+I write a post about thematically with the Christmas market in Düsseldorf.  I published a book or two about Ohrid and the monastery of St. Naum. Soon I will write a few lines and to Struga.   I have a separate category for Amsterdam, which I'm starting to fill with useful information-what to try on here, transport, museums, etc.,positive,ClassTypePositive,ClassificationModelEN,-149.13352491728776
+ Beija-flor, you don't want to open the link. And so I wanted to read it, I was at the Weinachtsmarkt in Düsseldorf, Cologne and Essen and I wanted someone to tell it because I can not describe as well.    ,positive,ClassTypeNegative,ClassificationModelEN,-71.25579514193394
+hris. g, thanks! I fixed the link. I hope you like it,positive,ClassTypePositive,ClassificationModelEN,-41.260190669014676
+Any new hotels to be found across Bulgaria.,positive,ClassTypePositive,ClassificationModelEN,-23.33444371445158
+  Diana, you write Great + 1 D itinerary applies for all!,positive,ClassTypePositive,ClassificationModelEN,-26.15708409275968
+Thanks for the interest.    I can already see and other travel notes. I really like to read short stories in the first person. I find in some of my next travel destination. For example, from the book of Roger of Bali saw the idea of the island of Java and Borobodur. I'm glad that achieved anyway because it's really worth it. And Roger-thanks for the idea.  ,positive,ClassTypePositive,ClassificationModelEN,-186.09435510444632
+Soon I hope to have and we new itinerary for Christmas markets in Vienna. Last year I wrote about the threshold it may tiâmdva for the city that I most write most often visit them.,positive,ClassTypePositive,ClassificationModelEN,-115.57803925890582
+Hi girls. Two days ago we came back from Devin. I strongly recommend hotel Persenk. He's awesome! Great service, spa-zone is great, pool water around 30-32 degrees, in the children's pool and the hot tub even more hot. I have absolutely no comment.  Before we go in Devon we stayed for one night in Plovdiv. The hotel is a business hotel. Also recommend it. Cozy, modern, good service.,positive,ClassTypePositive,ClassificationModelEN,-245.60048619960273
+  Can anyone recommend some good bungalows on the northern Black Sea coast. If you have a kitchen or kitchenette, nice beach and backyard for the kids, that'd be great. We already 10 days in Greece and now we are looking at the beginning of August to make another little more cheap holiday.  If my question is not in the correct theme, please direct me, I searched but not found. Thanks!   Bungalows Nimfa, Kamchia. They're awesome. ,positive,ClassTypePositive,ClassificationModelEN,-260.4831131057933
+I'm looking for a nice hotel in Sofia, if there could be a spa, fine.,positive,ClassTypePositive,ClassificationModelEN,-33.37670714564928
+ Apple, you can check how you like Hotel Maxi in Sofia (SPA), as well as Holiday Inn (also has a pleasant Spa Centre).  ,positive,ClassTypePositive,ClassificationModelEN,-74.857008338327
+the Royal Spa village-it is nice,positive,ClassTypePositive,ClassificationModelEN,-35.939195232324764
+Girls, opinions about apart hotel evridika hills in Pamporovo?  ,positive,ClassTypePositive,ClassificationModelEN,-44.65526433282629
+I have a question. My wife and I are planning a trip to Italy. The offer that we have stopped being offered by travel agency EXCURSION could someone tell me had impressions of this agency?,positive,ClassTypePositive,ClassificationModelEN,-127.49588772083301
+  I have a question. My wife and I are planning a trip to Italy. The offer that we have stopped being offered by travel agency EXCURSION could someone tell me had impressions of this agency?   There are topics for now, and there are themes for Italy-Rome, Venice, Florence's etc.  seek info there or ask.,positive,ClassTypePositive,ClassificationModelEN,-172.42646746712165
+Lately the theme has evolved into a Desk-Reference. I see that there is a publication, open to read a positive review for some hotels say it in your list and recommend me. .... feedback about. There are enough sites for posts.,negative,ClassTypeNegative,ClassificationModelEN,-145.96646025260955
+To share one impression of the hotel. I wanted to be the Borovets but very expensive. So we stayed 6 km away from Samokov Hotel in Borovets in Bistrica. Is a very good service stayed very satisfied. Just in time for winter ski pit often.,negative,ClassTypePositive,ClassificationModelEN,-145.24659625171532
+   Apple, you can check how you like Hotel Maxi in Sofia (SPA), as well as Holiday Inn (also has a pleasant Spa Centre).     Thanks, Petya.,positive,ClassTypePositive,ClassificationModelEN,-83.00706162904766

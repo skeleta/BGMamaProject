@@ -1,0 +1,42 @@
+Results from mixed training 
+-------------------------------------- 
+Precision positive: 0,81250 
+Recall positive: 0,52000 
+F1 positive: 0,63415 
+-------------------------------------- 
+Precision negative: 0,56364 
+Recall negative: 0,83784 
+F1 negative: 0,67391 
+-------------------------------------- 
+Precision overall : 0,65517 
+Recall overall : 0,65517 
+F1 overall : 0,65517 
+
+Results from bg training only 
+-------------------------------------- 
+Precision positive: 0,83333 
+Recall positive: 0,50000 
+F1 positive: 0,62500 
+-------------------------------------- 
+Precision negative: 0,56140 
+Recall negative: 0,86486 
+F1 negative: 0,68085 
+-------------------------------------- 
+Precision overall : 0,65517 
+Recall overall : 0,65517 
+F1 overall : 0,65517 
+
+Results from en training only 
+-------------------------------------- 
+Precision positive: 0,87179 
+Recall positive: 0,68000 
+F1 positive: 0,76404 
+-------------------------------------- 
+Precision negative: 0,66667 
+Recall negative: 0,86486 
+F1 negative: 0,75294 
+-------------------------------------- 
+Precision overall : 0,75862 
+Recall overall : 0,75862 
+F1 overall : 0,75862 
+
